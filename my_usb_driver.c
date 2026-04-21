@@ -3,19 +3,85 @@
 #include<linux/module.h>
 #include <linux/kdev_t.h>
 #include <linux/fs.h>
-#include <linux/device.h>
 #include<linux/err.h>
+#include<linux/cdev.h>
+#include<linux/device.h>
+#include<linux/slab.h>     // kmalloc/kfree
+#include<linux/uaccess.h>  // copy to/from user
+
+
+#define mem_size 1024 // memory size
 
 dev_t dev=0;
 static struct class *dev_class;
+static struct cdev usb_cdev;
+uint8_t *kernel_buffer;
+
+static int __init my_module_init(void);
+static void  __exit my_module_exit(void);
+static int usb_open(struct inode *inode,struct file *file);
+static int usb_release(struct inode *inode, struct file *file);
+static ssize_t usb_read(struct file *filp,char __user *buf,size_t len,loff_t* off);
+static ssize_t usb_write(struct file *filp, const char *buf,size_t len,loff_t* off);
+
+static struct file_operations fops=
+{
+	.owner=THIS_MODULE,
+	.read=usb_read,
+	.write=usb_write,
+	.open=usb_open,
+	.release= usb_release,
+};
+
+
+static int usb_open(struct inode *inode,struct file *file){
+	pr_info("Driver open called....\n");
+	return 0;
+}	
+
+static int usb_release(struct inode *inode,struct file *file){
+	pr_info("driver release called.....\n");
+	return 0;
+}
+
+static ssize_t usb_read(struct file *filp,char __user *buf,size_t len,loff_t *off ){
+	if(copy_to_user(buf,kernel_buffer,mem_size)){
+		pr_err("data read :ERR\n");
+	}
+	pr_info("data read done......\n");
+	return len;
+}
+
+static ssize_t usb_write(struct file *filp,const char __user *buf,size_t len,loff_t *off){
+	 if(copy_from_user(kernel_buffer,buf,mem_size)){
+		pr_err("Data write : ERR\n");
+	 }	 
+	pr_info("data write done!!!!....\n");
+	pr_info("data from user is: %s\n",kernel_buffer);
+	return len;
+}
+
+
 
 static int __init my_module_init(void){
-	if((alloc_chrdev_region(&dev, 0,1,"John_usb_driver"))<0){
+	//alloc major and minor num at run time
+	if((alloc_chrdev_region(&dev, 0,1,"john_usb_driver"))<0){
 		pr_err("cannot allocate major num for device 1\n");
 		return -1;
 	}
 	pr_info( "Major:%d Minor: %d\n", MAJOR(dev),MINOR(dev));
+	
+	//init the cdev struct with fops 
+	cdev_init(&usb_cdev,&fops);
 
+	//adding the device to the system
+
+	if ((cdev_add(&usb_cdev,dev,1))<0){
+		pr_err("cannot add the device to system...\n");
+		goto r_class;
+	}
+
+	//creating struct class 
 	dev_class = class_create("USB_class");
 	if(IS_ERR(dev_class)){
 		pr_err("cannot create the struct class for device\n");
@@ -26,7 +92,15 @@ static int __init my_module_init(void){
 		pr_err("cannot create device\n");
 		goto r_device;
 	}
-	printk(KERN_INFO "Kernel module inserted\n");
+
+	//creating kernel memory at init
+	if((kernel_buffer=kmalloc(mem_size,GFP_KERNEL))==0){
+		pr_err("cannot allocate memory....\n");
+		goto r_device;
+	}
+	strcpy(kernel_buffer,"Hello World\n");
+
+	pr_info("Kernel module inserted........\n");
 	
 	return 0;
 
@@ -38,10 +112,13 @@ r_class:
 
 }
 
+//module exit func
 
 static void  __exit my_module_exit(void){
+	kfree(kernel_buffer);
 	device_destroy(dev_class,dev);
 	class_destroy(dev_class);
+	cdev_del(&usb_cdev);
 	unregister_chrdev_region(dev,1);
 	
 	pr_info("kernel module exited\n");
@@ -52,5 +129,5 @@ module_exit(my_module_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("JOHN");
-MODULE_VERSION("1.2");
-MODULE_DESCRIPTION("creating device file automatically using class ");
+MODULE_VERSION("1.4");
+MODULE_DESCRIPTION("simple real device driver which communciates b/w user and kernel space");

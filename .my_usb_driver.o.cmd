@@ -1080,6 +1080,7 @@ deps_my_usb_driver.o := \
     $(wildcard include/config/UNWINDER_ORC) \
   /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/module.h \
     $(wildcard include/config/HAVE_MOD_ARCH_SPECIFIC) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/cdev.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/device.h \
     $(wildcard include/config/GENERIC_MSI_IRQ) \
     $(wildcard include/config/ENERGY_MODEL) \
