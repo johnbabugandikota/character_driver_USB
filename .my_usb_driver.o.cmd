@@ -1125,6 +1125,8 @@ deps_my_usb_driver.o := \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/device/driver.h \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/device.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/pm_wakeup.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/proc_fs.h \
+    $(wildcard include/config/PROC_PID_ARCH_STATUS) \
 
 my_usb_driver.o: $(deps_my_usb_driver.o)
 

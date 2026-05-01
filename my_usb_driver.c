@@ -9,13 +9,19 @@
 #include<linux/slab.h>     // kmalloc/kfree
 #include<linux/uaccess.h>  // copy to/from user
 #include<linux/ioctl.h>
+#include<linux/proc_fs.h>
+
+
 
 #define mem_size 1024 // memory size
 #define WR_VALUE _IOW('a','a',int32_t*)
 #define RD_VALUE _IOR('a','b',int32_t*)
 
 static int32_t value=0;
-
+static char proc_array[20]="trying proc fs";
+static int len = 1;  //length for proc
+//proc parent name
+static struct proc_dir_entry *parent;
 
 
 dev_t dev=0;
@@ -31,6 +37,7 @@ static ssize_t usb_read(struct file *filp,char __user *buf,size_t len,loff_t* of
 static ssize_t usb_write(struct file *filp, const char *buf,size_t len,loff_t* off);
 static long int usb_ioctl(struct file *file,unsigned int cmd,unsigned long arg);
 
+// fops related structure 
 static struct file_operations fops=
 {
 	.owner=THIS_MODULE,
@@ -42,6 +49,20 @@ static struct file_operations fops=
 };
 
 
+
+/***************** Procfs Functions *******************/
+static int      open_proc(struct inode *inode, struct file *file);
+static int      release_proc(struct inode *inode, struct file *file);
+static ssize_t  read_proc(struct file *filp, char __user *buffer, size_t length,loff_t * offset);
+static ssize_t  write_proc(struct file *filp, const char *buff, size_t len, loff_t * off);
+
+//proc fs ops structure
+static struct proc_ops proc_fops = {
+        .proc_open = open_proc,
+        .proc_read = read_proc,
+        .proc_write = write_proc,
+        .proc_release = release_proc
+};
 
 
 static int usb_open(struct inode *inode,struct file *file){
@@ -71,6 +92,47 @@ static ssize_t usb_write(struct file *filp,const char __user *buf,size_t len,lof
 	return len;
 }
 
+/*
+** This function will be called when we open the procfs file
+*/
+static int open_proc(struct inode *inode, struct file *file)
+{
+    pr_info("proc file opend.....\t");
+    return 0;
+}
+/*
+** This function will be called when we close the procfs file
+*/
+static int release_proc(struct inode *inode, struct file *file)
+{
+    pr_info("proc file released.....\n");
+    return 0;
+}
+
+/*
+** This function will be called when we read the procfs file
+*/
+static ssize_t read_proc(struct file *filp, char __user *buffer, size_t length,loff_t * offset)
+{
+    pr_info("proc file read.....\n");
+    if(len)
+    {
+        len=0;
+    }
+    else
+    {
+        len=1;
+        return 0;
+    }
+    
+    if( copy_to_user(buffer,proc_array,20) )
+    {
+        pr_err("Data Send : Err!\n");
+	return -EFAULT;
+    }
+ 
+    return length;;
+}
 
 static long  int usb_ioctl(struct file *file,unsigned int cmd,unsigned long arg){
 //	pr_info("USB: arg address received : %lx",arg);
@@ -95,7 +157,20 @@ static long  int usb_ioctl(struct file *file,unsigned int cmd,unsigned long arg)
 	return 0;
 }
 
-
+/*
+** This function will be called when we write the procfs file
+*/
+static ssize_t write_proc(struct file *filp, const char *buff, size_t len, loff_t * off)
+{
+    pr_info("proc file wrote.....\n");
+    
+    if( copy_from_user(proc_array,buff,len) )
+    {
+        pr_err("Data Write : Err!\n");
+    }
+    
+    return len;
+}
 
 static int __init my_module_init(void){
 	//alloc major and minor num at run time
@@ -126,7 +201,17 @@ static int __init my_module_init(void){
 		pr_err("USB: cannot create device\n");
 		goto r_device;
 	}
-
+ /*Create proc directory. It will create a directory under "/proc" */
+        parent = proc_mkdir("john_usb",NULL);
+        if( parent == NULL )
+        {
+            pr_info("Error creating proc entry");
+            goto r_device;
+        }
+        
+        /*Creating Proc entry under "/proc/etx/" */
+        proc_create("john_proc", 0666, parent, &proc_fops);
+ 
 	//creating kernel memory at init
 	if((kernel_buffer=kmalloc(mem_size,GFP_KERNEL))==0){
 		pr_err("USB: cannot allocate memory....\n");
@@ -149,6 +234,9 @@ r_class:
 //module exit func
 
 static void  __exit my_module_exit(void){
+/* remove complete /proc/etx */
+        proc_remove(parent);
+
 	kfree(kernel_buffer);
 	device_destroy(dev_class,dev);
 	class_destroy(dev_class);
@@ -163,5 +251,5 @@ module_exit(my_module_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("JOHN");
-MODULE_VERSION("1.5");
-MODULE_DESCRIPTION("IOCTL setup to establish comm bw user and kernel space");
+MODULE_VERSION("1.6");
+MODULE_DESCRIPTION("proc fs  setup to establish comm bw user and kernel space");
