@@ -1,8 +1,9 @@
-savedcmd_my_usb_driver.o :=  x86_64-linux-gnu-gcc-15 -Wp,-MMD,./.my_usb_driver.o.d -nostdinc -I/usr/src/linux-headers-6.18.12+kali-common/arch/x86/include -I/usr/src/linux-headers-6.18.12+kali-amd64/arch/x86/include/generated -I/usr/src/linux-headers-6.18.12+kali-common/include -I/usr/src/linux-headers-6.18.12+kali-amd64/include -I/usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/uapi -I/usr/src/linux-headers-6.18.12+kali-amd64/arch/x86/include/generated/uapi -I/usr/src/linux-headers-6.18.12+kali-common/include/uapi -I/usr/src/linux-headers-6.18.12+kali-amd64/include/generated/uapi -include /usr/src/linux-headers-6.18.12+kali-common/include/linux/compiler-version.h -include /usr/src/linux-headers-6.18.12+kali-common/include/linux/kconfig.h -include /usr/src/linux-headers-6.18.12+kali-common/include/linux/compiler_types.h -D__KERNEL__ -std=gnu11 -fshort-wchar -funsigned-char -fno-common -fno-PIE -fno-strict-aliasing -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -mno-sse4a -fcf-protection=branch -fno-jump-tables -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -march=x86-64 -mtune=generic -mno-red-zone -mcmodel=kernel -mstack-protector-guard-reg=gs -mstack-protector-guard-symbol=__ref_stack_chk_guard -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -mharden-sls=all -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -O2 -fno-allow-store-data-races -fstack-protector-strong -ftrivial-auto-var-init=zero -fzero-init-padding-bits=all -fno-stack-clash-protection -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -fmin-function-alignment=16 -fstrict-flex-arrays=3 -fno-strict-overflow -fno-stack-check -fconserve-stack -fno-builtin-wcslen -Wall -Wextra -Wundef -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Werror=strict-prototypes -Wno-format-security -Wno-trigraphs -Wno-frame-address -Wno-address-of-packed-member -Wmissing-declarations -Wmissing-prototypes -Wframe-larger-than=2048 -Wno-main -Wno-dangling-pointer -Wvla-larger-than=1 -Wno-pointer-sign -Wcast-function-type -Wno-unterminated-string-initialization -Wno-array-bounds -Wno-stringop-overflow -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wenum-conversion -Wunused -Wno-unused-but-set-variable -Wno-unused-const-variable -Wno-packed-not-aligned -Wno-format-overflow -Wno-format-truncation -Wno-stringop-truncation -Wno-override-init -Wno-missing-field-initializers -Wno-type-limits -Wno-shift-negative-value -Wno-maybe-uninitialized -Wno-sign-compare -Wno-unused-parameter -g  -fsanitize=bounds-strict -fsanitize=shift    -DMODULE  -DKBUILD_BASENAME='"my_usb_driver"' -DKBUILD_MODNAME='"my_usb_driver"' -D__KBUILD_MODNAME=kmod_my_usb_driver -c -o my_usb_driver.o my_usb_driver.c   ; /usr/src/linux-headers-6.18.12+kali-amd64/tools/objtool/objtool --hacks=jump_label --hacks=noinstr --hacks=skylake --ibt --orc --retpoline --rethunk --sls --static-call --uaccess --prefix=16  --link  --module my_usb_driver.o
+savedcmd_proc_fs.mod.o :=  x86_64-linux-gnu-gcc-15 -Wp,-MMD,./.proc_fs.mod.o.d -nostdinc -I/usr/src/linux-headers-6.18.12+kali-common/arch/x86/include -I/usr/src/linux-headers-6.18.12+kali-amd64/arch/x86/include/generated -I/usr/src/linux-headers-6.18.12+kali-common/include -I/usr/src/linux-headers-6.18.12+kali-amd64/include -I/usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/uapi -I/usr/src/linux-headers-6.18.12+kali-amd64/arch/x86/include/generated/uapi -I/usr/src/linux-headers-6.18.12+kali-common/include/uapi -I/usr/src/linux-headers-6.18.12+kali-amd64/include/generated/uapi -include /usr/src/linux-headers-6.18.12+kali-common/include/linux/compiler-version.h -include /usr/src/linux-headers-6.18.12+kali-common/include/linux/kconfig.h -include /usr/src/linux-headers-6.18.12+kali-common/include/linux/compiler_types.h -D__KERNEL__ -std=gnu11 -fshort-wchar -funsigned-char -fno-common -fno-PIE -fno-strict-aliasing -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -mno-sse4a -fcf-protection=branch -fno-jump-tables -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -march=x86-64 -mtune=generic -mno-red-zone -mcmodel=kernel -mstack-protector-guard-reg=gs -mstack-protector-guard-symbol=__ref_stack_chk_guard -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -mharden-sls=all -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -O2 -fno-allow-store-data-races -fstack-protector-strong -ftrivial-auto-var-init=zero -fzero-init-padding-bits=all -fno-stack-clash-protection -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -fmin-function-alignment=16 -fstrict-flex-arrays=3 -fno-strict-overflow -fno-stack-check -fconserve-stack -fno-builtin-wcslen -Wall -Wextra -Wundef -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Werror=strict-prototypes -Wno-format-security -Wno-trigraphs -Wno-frame-address -Wno-address-of-packed-member -Wmissing-declarations -Wmissing-prototypes -Wframe-larger-than=2048 -Wno-main -Wno-dangling-pointer -Wvla-larger-than=1 -Wno-pointer-sign -Wcast-function-type -Wno-unterminated-string-initialization -Wno-array-bounds -Wno-stringop-overflow -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wenum-conversion -Wunused -Wno-unused-but-set-variable -Wno-unused-const-variable -Wno-packed-not-aligned -Wno-format-overflow -Wno-format-truncation -Wno-stringop-truncation -Wno-override-init -Wno-missing-field-initializers -Wno-type-limits -Wno-shift-negative-value -Wno-maybe-uninitialized -Wno-sign-compare -Wno-unused-parameter -g  -fsanitize=bounds-strict -fsanitize=shift    -DMODULE  -DKBUILD_BASENAME='"proc_fs.mod"' -DKBUILD_MODNAME='"proc_fs"' -D__KBUILD_MODNAME=kmod_proc_fs -c -o proc_fs.mod.o proc_fs.mod.c   ; /usr/src/linux-headers-6.18.12+kali-amd64/tools/objtool/objtool --hacks=jump_label --hacks=noinstr --hacks=skylake --ibt --orc --retpoline --rethunk --sls --static-call --uaccess --prefix=16  --link  --module proc_fs.mod.o
 
-source_my_usb_driver.o := my_usb_driver.c
+source_proc_fs.mod.o := proc_fs.mod.c
 
-deps_my_usb_driver.o := \
+deps_proc_fs.mod.o := \
+    $(wildcard include/config/MODULE_UNLOAD) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/compiler-version.h \
     $(wildcard include/config/CC_VERSION_TEXT) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/kconfig.h \
@@ -32,24 +33,38 @@ deps_my_usb_driver.o := \
     $(wildcard include/config/SHADOW_CALL_STACK) \
     $(wildcard include/config/KCOV) \
     $(wildcard include/config/CC_HAS_TYPEOF_UNQUAL) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/kernel.h \
-    $(wildcard include/config/PREEMPT_VOLUNTARY_BUILD) \
-    $(wildcard include/config/PREEMPT_DYNAMIC) \
-    $(wildcard include/config/HAVE_PREEMPT_DYNAMIC_CALL) \
-    $(wildcard include/config/HAVE_PREEMPT_DYNAMIC_KEY) \
-    $(wildcard include/config/PREEMPT_) \
-    $(wildcard include/config/DEBUG_ATOMIC_SLEEP) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/module.h \
+    $(wildcard include/config/MODULES) \
+    $(wildcard include/config/SYSFS) \
+    $(wildcard include/config/MODULES_TREE_LOOKUP) \
+    $(wildcard include/config/LIVEPATCH) \
+    $(wildcard include/config/STACKTRACE_BUILD_ID) \
+    $(wildcard include/config/ARCH_USES_CFI_TRAPS) \
+    $(wildcard include/config/MODULE_SIG) \
+    $(wildcard include/config/GENERIC_BUG) \
+    $(wildcard include/config/KALLSYMS) \
     $(wildcard include/config/SMP) \
-    $(wildcard include/config/MMU) \
-    $(wildcard include/config/PROVE_LOCKING) \
+    $(wildcard include/config/TRACEPOINTS) \
+    $(wildcard include/config/TREE_SRCU) \
+    $(wildcard include/config/BPF_EVENTS) \
+    $(wildcard include/config/DEBUG_INFO_BTF_MODULES) \
+    $(wildcard include/config/JUMP_LABEL) \
     $(wildcard include/config/TRACING) \
+    $(wildcard include/config/EVENT_TRACING) \
     $(wildcard include/config/DYNAMIC_FTRACE) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/stdarg.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/align.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/vdso/align.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/vdso/const.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/uapi/linux/const.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/array_size.h \
+    $(wildcard include/config/KPROBES) \
+    $(wildcard include/config/HAVE_STATIC_CALL_INLINE) \
+    $(wildcard include/config/KUNIT) \
+    $(wildcard include/config/PRINTK_INDEX) \
+    $(wildcard include/config/CONSTRUCTORS) \
+    $(wildcard include/config/FUNCTION_ERROR_INJECTION) \
+    $(wildcard include/config/DYNAMIC_DEBUG_CORE) \
+    $(wildcard include/config/MITIGATION_RETPOLINE) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/list.h \
+    $(wildcard include/config/LIST_HARDENED) \
+    $(wildcard include/config/DEBUG_LIST) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/container_of.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/build_bug.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/compiler.h \
     $(wildcard include/config/TRACE_BRANCH_PROFILING) \
     $(wildcard include/config/PROFILE_ALL_BRANCHES) \
@@ -85,40 +100,17 @@ deps_my_usb_driver.o := \
     $(wildcard include/config/KCSAN) \
     $(wildcard include/config/KCSAN_WEAK_MEMORY) \
     $(wildcard include/config/KCSAN_IGNORE_ATOMICS) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/limits.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/uapi/linux/limits.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/vdso/limits.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/linkage.h \
-    $(wildcard include/config/ARCH_USE_SYM_ANNOTATIONS) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/stringify.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/export.h \
-    $(wildcard include/config/MODVERSIONS) \
-    $(wildcard include/config/GENDWARFKSYMS) \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/linkage.h \
-    $(wildcard include/config/CALL_PADDING) \
-    $(wildcard include/config/MITIGATION_RETHUNK) \
-    $(wildcard include/config/MITIGATION_RETPOLINE) \
-    $(wildcard include/config/MITIGATION_SLS) \
-    $(wildcard include/config/FUNCTION_PADDING_BYTES) \
-    $(wildcard include/config/UML) \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/ibt.h \
-    $(wildcard include/config/X86_KERNEL_IBT) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/container_of.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/build_bug.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/bitops.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/bits.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/vdso/bits.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/uapi/linux/bits.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/overflow.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/poison.h \
+    $(wildcard include/config/ILLEGAL_POINTER_VALUE) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/const.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/typecheck.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/uapi/linux/kernel.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/uapi/linux/sysinfo.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/generic-non-atomic.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/vdso/const.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/uapi/linux/const.h \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/barrier.h \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/alternative.h \
     $(wildcard include/config/CALL_THUNKS) \
     $(wildcard include/config/MITIGATION_ITS) \
+    $(wildcard include/config/MITIGATION_RETHUNK) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/stringify.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/objtool.h \
     $(wildcard include/config/FRAME_POINTER) \
     $(wildcard include/config/NOINSTR_VALIDATION) \
@@ -126,10 +118,8 @@ deps_my_usb_driver.o := \
     $(wildcard include/config/MITIGATION_SRSO) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/objtool_types.h \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/asm.h \
-    $(wildcard include/config/KPROBES) \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/extable_fixup_types.h \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/bug.h \
-    $(wildcard include/config/GENERIC_BUG) \
     $(wildcard include/config/DEBUG_BUGVERBOSE) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/instrumentation.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bug.h \
@@ -138,20 +128,38 @@ deps_my_usb_driver.o := \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/once_lite.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/panic.h \
     $(wildcard include/config/PANIC_TIMEOUT) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/stdarg.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/printk.h \
     $(wildcard include/config/MESSAGE_LOGLEVEL_DEFAULT) \
     $(wildcard include/config/CONSOLE_LOGLEVEL_DEFAULT) \
     $(wildcard include/config/CONSOLE_LOGLEVEL_QUIET) \
     $(wildcard include/config/EARLY_PRINTK) \
     $(wildcard include/config/PRINTK) \
-    $(wildcard include/config/PRINTK_INDEX) \
     $(wildcard include/config/DYNAMIC_DEBUG) \
-    $(wildcard include/config/DYNAMIC_DEBUG_CORE) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/init.h \
     $(wildcard include/config/MEMORY_HOTPLUG) \
     $(wildcard include/config/HAVE_ARCH_PREL32_RELOCATIONS) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/kern_levels.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/linkage.h \
+    $(wildcard include/config/ARCH_USE_SYM_ANNOTATIONS) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/export.h \
+    $(wildcard include/config/MODVERSIONS) \
+    $(wildcard include/config/GENDWARFKSYMS) \
+  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/linkage.h \
+    $(wildcard include/config/CALL_PADDING) \
+    $(wildcard include/config/MITIGATION_SLS) \
+    $(wildcard include/config/FUNCTION_PADDING_BYTES) \
+    $(wildcard include/config/UML) \
+  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/ibt.h \
+    $(wildcard include/config/X86_KERNEL_IBT) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/ratelimit_types.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/bits.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/vdso/bits.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/uapi/linux/bits.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/overflow.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/limits.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/uapi/linux/limits.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/vdso/limits.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/uapi/linux/param.h \
   /usr/src/linux-headers-6.18.12+kali-amd64/arch/x86/include/generated/uapi/asm/param.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/param.h \
@@ -176,7 +184,6 @@ deps_my_usb_driver.o := \
     $(wildcard include/config/LOCKDEP) \
     $(wildcard include/config/LOCK_STAT) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/dynamic_debug.h \
-    $(wildcard include/config/JUMP_LABEL) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/jump_label.h \
     $(wildcard include/config/HAVE_ARCH_JUMP_LABEL_RELATIVE) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/cleanup.h \
@@ -189,63 +196,6 @@ deps_my_usb_driver.o := \
     $(wildcard include/config/HAVE_JUMP_LABEL_HACK) \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/nops.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/barrier.h \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/bitops.h \
-    $(wildcard include/config/X86_CMOV) \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/rmwcc.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/sched.h \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/arch_hweight.h \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/cpufeatures.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/const_hweight.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/instrumented-atomic.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/instrumented.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/kmsan-checks.h \
-    $(wildcard include/config/KMSAN) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/instrumented-non-atomic.h \
-    $(wildcard include/config/KCSAN_ASSUME_PLAIN_WRITES_ATOMIC) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/instrumented-lock.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/le.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/ext2-atomic-setbit.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/hex.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/kstrtox.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/log2.h \
-    $(wildcard include/config/ARCH_HAS_ILOG2_U32) \
-    $(wildcard include/config/ARCH_HAS_ILOG2_U64) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/math.h \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/div64.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/div64.h \
-    $(wildcard include/config/CC_OPTIMIZE_FOR_PERFORMANCE) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/minmax.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/sprintf.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/static_call_types.h \
-    $(wildcard include/config/HAVE_STATIC_CALL) \
-    $(wildcard include/config/HAVE_STATIC_CALL_INLINE) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/instruction_pointer.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/util_macros.h \
-    $(wildcard include/config/FOO_SUSPEND) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/wordpart.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/module.h \
-    $(wildcard include/config/MODULES) \
-    $(wildcard include/config/SYSFS) \
-    $(wildcard include/config/MODULES_TREE_LOOKUP) \
-    $(wildcard include/config/LIVEPATCH) \
-    $(wildcard include/config/STACKTRACE_BUILD_ID) \
-    $(wildcard include/config/ARCH_USES_CFI_TRAPS) \
-    $(wildcard include/config/MODULE_SIG) \
-    $(wildcard include/config/KALLSYMS) \
-    $(wildcard include/config/TRACEPOINTS) \
-    $(wildcard include/config/TREE_SRCU) \
-    $(wildcard include/config/BPF_EVENTS) \
-    $(wildcard include/config/DEBUG_INFO_BTF_MODULES) \
-    $(wildcard include/config/EVENT_TRACING) \
-    $(wildcard include/config/KUNIT) \
-    $(wildcard include/config/MODULE_UNLOAD) \
-    $(wildcard include/config/CONSTRUCTORS) \
-    $(wildcard include/config/FUNCTION_ERROR_INJECTION) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/list.h \
-    $(wildcard include/config/LIST_HARDENED) \
-    $(wildcard include/config/DEBUG_LIST) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/poison.h \
-    $(wildcard include/config/ILLEGAL_POINTER_VALUE) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/stat.h \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/uapi/asm/stat.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/uapi/linux/stat.h \
@@ -253,6 +203,8 @@ deps_my_usb_driver.o := \
     $(wildcard include/config/POSIX_TIMERS) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/cache.h \
     $(wildcard include/config/ARCH_HAS_CACHE_LINE_SIZE) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/uapi/linux/kernel.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/uapi/linux/sysinfo.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/vdso/cache.h \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/cache.h \
     $(wildcard include/config/X86_L1_CACHE_SHIFT) \
@@ -260,6 +212,10 @@ deps_my_usb_driver.o := \
     $(wildcard include/config/X86_VSMP) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/math64.h \
     $(wildcard include/config/ARCH_SUPPORTS_INT128) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/math.h \
+  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/div64.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/div64.h \
+    $(wildcard include/config/CC_OPTIMIZE_FOR_PERFORMANCE) \
   /usr/src/linux-headers-6.18.12+kali-common/include/vdso/math64.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/time64.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/vdso/time64.h \
@@ -322,6 +278,7 @@ deps_my_usb_driver.o := \
     $(wildcard include/config/PGTABLE_LEVELS) \
     $(wildcard include/config/PROC_FS) \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/pgtable_64_types.h \
+    $(wildcard include/config/KMSAN) \
     $(wildcard include/config/DEBUG_KMAP_LOCAL_FORCE_MAP) \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/sparsemem.h \
     $(wildcard include/config/SPARSEMEM) \
@@ -330,6 +287,7 @@ deps_my_usb_driver.o := \
     $(wildcard include/config/MITIGATION_CALL_DEPTH_TRACKING) \
     $(wildcard include/config/MITIGATION_IBPB_ENTRY) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/static_key.h \
+  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/cpufeatures.h \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/msr-index.h \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/unwind_hints.h \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/orc_types.h \
@@ -365,6 +323,48 @@ deps_my_usb_driver.o := \
     $(wildcard include/config/HOTPLUG_CPU) \
     $(wildcard include/config/DEBUG_PER_CPU_MAPS) \
     $(wildcard include/config/CPUMASK_OFFSTACK) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/kernel.h \
+    $(wildcard include/config/PREEMPT_VOLUNTARY_BUILD) \
+    $(wildcard include/config/PREEMPT_DYNAMIC) \
+    $(wildcard include/config/HAVE_PREEMPT_DYNAMIC_CALL) \
+    $(wildcard include/config/HAVE_PREEMPT_DYNAMIC_KEY) \
+    $(wildcard include/config/PREEMPT_) \
+    $(wildcard include/config/DEBUG_ATOMIC_SLEEP) \
+    $(wildcard include/config/MMU) \
+    $(wildcard include/config/PROVE_LOCKING) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/align.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/vdso/align.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/array_size.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/bitops.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/typecheck.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/generic-non-atomic.h \
+  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/bitops.h \
+    $(wildcard include/config/X86_CMOV) \
+  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/rmwcc.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/sched.h \
+  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/arch_hweight.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/const_hweight.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/instrumented-atomic.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/instrumented.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/kmsan-checks.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/instrumented-non-atomic.h \
+    $(wildcard include/config/KCSAN_ASSUME_PLAIN_WRITES_ATOMIC) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/instrumented-lock.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/le.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/bitops/ext2-atomic-setbit.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/hex.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/kstrtox.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/log2.h \
+    $(wildcard include/config/ARCH_HAS_ILOG2_U32) \
+    $(wildcard include/config/ARCH_HAS_ILOG2_U64) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/minmax.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/sprintf.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/static_call_types.h \
+    $(wildcard include/config/HAVE_STATIC_CALL) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/instruction_pointer.h \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/util_macros.h \
+    $(wildcard include/config/FOO_SUSPEND) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/wordpart.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/bitmap.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/errno.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/uapi/linux/errno.h \
@@ -1080,109 +1080,11 @@ deps_my_usb_driver.o := \
     $(wildcard include/config/UNWINDER_ORC) \
   /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/module.h \
     $(wildcard include/config/HAVE_MOD_ARCH_SPECIFIC) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/cdev.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/device.h \
-    $(wildcard include/config/GENERIC_MSI_IRQ) \
-    $(wildcard include/config/ENERGY_MODEL) \
-    $(wildcard include/config/PINCTRL) \
-    $(wildcard include/config/ARCH_HAS_DMA_OPS) \
-    $(wildcard include/config/DMA_DECLARE_COHERENT) \
-    $(wildcard include/config/DMA_CMA) \
-    $(wildcard include/config/SWIOTLB) \
-    $(wildcard include/config/SWIOTLB_DYNAMIC) \
-    $(wildcard include/config/ARCH_HAS_SYNC_DMA_FOR_DEVICE) \
-    $(wildcard include/config/ARCH_HAS_SYNC_DMA_FOR_CPU) \
-    $(wildcard include/config/ARCH_HAS_SYNC_DMA_FOR_CPU_ALL) \
-    $(wildcard include/config/DMA_OPS_BYPASS) \
-    $(wildcard include/config/DMA_NEED_SYNC) \
-    $(wildcard include/config/IOMMU_DMA) \
-    $(wildcard include/config/PM) \
-    $(wildcard include/config/PM_SLEEP) \
-    $(wildcard include/config/OF) \
-    $(wildcard include/config/DEVTMPFS) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/dev_printk.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/energy_model.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/sched/cpufreq.h \
-    $(wildcard include/config/CPU_FREQ) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/sched/topology.h \
-    $(wildcard include/config/SCHED_CLUSTER) \
-    $(wildcard include/config/SCHED_MC) \
-    $(wildcard include/config/CPU_FREQ_GOV_SCHEDUTIL) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/sched/idle.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/sched/sd_flags.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/ioport.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/klist.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/pm.h \
-    $(wildcard include/config/VT_CONSOLE_SLEEP) \
-    $(wildcard include/config/CXL_SUSPEND) \
-    $(wildcard include/config/PM_CLK) \
-    $(wildcard include/config/PM_GENERIC_DOMAINS) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/device/bus.h \
-    $(wildcard include/config/ACPI) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/device/class.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/device/devres.h \
-    $(wildcard include/config/HAS_IOMEM) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/device/driver.h \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/device.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/pm_wakeup.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/proc_fs.h \
-    $(wildcard include/config/PROC_PID_ARCH_STATUS) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/kthread.h \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/io.h \
-    $(wildcard include/config/MTRR) \
-    $(wildcard include/config/X86_PAT) \
-  /usr/src/linux-headers-6.18.12+kali-amd64/arch/x86/include/generated/asm/early_ioremap.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/early_ioremap.h \
-    $(wildcard include/config/GENERIC_EARLY_IOREMAP) \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/shared/io.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/io.h \
-    $(wildcard include/config/GENERIC_IOMAP) \
-    $(wildcard include/config/TRACE_MMIO_ACCESS) \
-    $(wildcard include/config/HAS_IOPORT) \
-    $(wildcard include/config/GENERIC_IOREMAP) \
-    $(wildcard include/config/HAS_IOPORT_MAP) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/sizes.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/iomap.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/pci_iomap.h \
-    $(wildcard include/config/PCI) \
-    $(wildcard include/config/NO_GENERIC_PCI_IOPORT_MAP) \
-    $(wildcard include/config/GENERIC_PCI_IOMAP) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/logic_pio.h \
-    $(wildcard include/config/INDIRECT_PIO) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/fwnode.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/interrupt.h \
-    $(wildcard include/config/IRQ_FORCED_THREADING) \
-    $(wildcard include/config/GENERIC_IRQ_PROBE) \
-    $(wildcard include/config/IRQ_TIMINGS) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/irqreturn.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/hardirq.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/context_tracking_state.h \
-    $(wildcard include/config/CONTEXT_TRACKING_USER) \
-    $(wildcard include/config/CONTEXT_TRACKING) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/ftrace_irq.h \
-    $(wildcard include/config/HWLAT_TRACER) \
-    $(wildcard include/config/OSNOISE_TRACER) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/vtime.h \
-    $(wildcard include/config/VIRT_CPU_ACCOUNTING) \
-    $(wildcard include/config/IRQ_TIME_ACCOUNTING) \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/hardirq.h \
-    $(wildcard include/config/KVM_INTEL) \
-    $(wildcard include/config/KVM) \
-    $(wildcard include/config/X86_THERMAL_VECTOR) \
-    $(wildcard include/config/X86_MCE_THRESHOLD) \
-    $(wildcard include/config/X86_MCE_AMD) \
-    $(wildcard include/config/X86_HV_CALLBACK_VECTOR) \
-    $(wildcard include/config/HYPERV) \
-    $(wildcard include/config/X86_POSTED_MSI) \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/irq.h \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/irq_vectors.h \
-    $(wildcard include/config/PCI_MSI) \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/sections.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/sections.h \
-    $(wildcard include/config/HAVE_FUNCTION_DESCRIPTORS) \
+  /usr/src/linux-headers-6.18.12+kali-common/include/linux/export-internal.h \
+    $(wildcard include/config/PARISC) \
 
-my_usb_driver.o: $(deps_my_usb_driver.o)
+proc_fs.mod.o: $(deps_proc_fs.mod.o)
 
-$(deps_my_usb_driver.o):
+$(deps_proc_fs.mod.o):
 
-my_usb_driver.o: $(wildcard /usr/src/linux-headers-6.18.12+kali-amd64/tools/objtool/objtool)
+proc_fs.mod.o: $(wildcard /usr/src/linux-headers-6.18.12+kali-amd64/tools/objtool/objtool)

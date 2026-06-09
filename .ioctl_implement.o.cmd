@@ -1,8 +1,8 @@
-savedcmd_my_usb_driver.o :=  x86_64-linux-gnu-gcc-15 -Wp,-MMD,./.my_usb_driver.o.d -nostdinc -I/usr/src/linux-headers-6.18.12+kali-common/arch/x86/include -I/usr/src/linux-headers-6.18.12+kali-amd64/arch/x86/include/generated -I/usr/src/linux-headers-6.18.12+kali-common/include -I/usr/src/linux-headers-6.18.12+kali-amd64/include -I/usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/uapi -I/usr/src/linux-headers-6.18.12+kali-amd64/arch/x86/include/generated/uapi -I/usr/src/linux-headers-6.18.12+kali-common/include/uapi -I/usr/src/linux-headers-6.18.12+kali-amd64/include/generated/uapi -include /usr/src/linux-headers-6.18.12+kali-common/include/linux/compiler-version.h -include /usr/src/linux-headers-6.18.12+kali-common/include/linux/kconfig.h -include /usr/src/linux-headers-6.18.12+kali-common/include/linux/compiler_types.h -D__KERNEL__ -std=gnu11 -fshort-wchar -funsigned-char -fno-common -fno-PIE -fno-strict-aliasing -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -mno-sse4a -fcf-protection=branch -fno-jump-tables -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -march=x86-64 -mtune=generic -mno-red-zone -mcmodel=kernel -mstack-protector-guard-reg=gs -mstack-protector-guard-symbol=__ref_stack_chk_guard -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -mharden-sls=all -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -O2 -fno-allow-store-data-races -fstack-protector-strong -ftrivial-auto-var-init=zero -fzero-init-padding-bits=all -fno-stack-clash-protection -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -fmin-function-alignment=16 -fstrict-flex-arrays=3 -fno-strict-overflow -fno-stack-check -fconserve-stack -fno-builtin-wcslen -Wall -Wextra -Wundef -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Werror=strict-prototypes -Wno-format-security -Wno-trigraphs -Wno-frame-address -Wno-address-of-packed-member -Wmissing-declarations -Wmissing-prototypes -Wframe-larger-than=2048 -Wno-main -Wno-dangling-pointer -Wvla-larger-than=1 -Wno-pointer-sign -Wcast-function-type -Wno-unterminated-string-initialization -Wno-array-bounds -Wno-stringop-overflow -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wenum-conversion -Wunused -Wno-unused-but-set-variable -Wno-unused-const-variable -Wno-packed-not-aligned -Wno-format-overflow -Wno-format-truncation -Wno-stringop-truncation -Wno-override-init -Wno-missing-field-initializers -Wno-type-limits -Wno-shift-negative-value -Wno-maybe-uninitialized -Wno-sign-compare -Wno-unused-parameter -g  -fsanitize=bounds-strict -fsanitize=shift    -DMODULE  -DKBUILD_BASENAME='"my_usb_driver"' -DKBUILD_MODNAME='"my_usb_driver"' -D__KBUILD_MODNAME=kmod_my_usb_driver -c -o my_usb_driver.o my_usb_driver.c   ; /usr/src/linux-headers-6.18.12+kali-amd64/tools/objtool/objtool --hacks=jump_label --hacks=noinstr --hacks=skylake --ibt --orc --retpoline --rethunk --sls --static-call --uaccess --prefix=16  --link  --module my_usb_driver.o
+savedcmd_ioctl_implement.o :=  x86_64-linux-gnu-gcc-15 -Wp,-MMD,./.ioctl_implement.o.d -nostdinc -I/usr/src/linux-headers-6.18.12+kali-common/arch/x86/include -I/usr/src/linux-headers-6.18.12+kali-amd64/arch/x86/include/generated -I/usr/src/linux-headers-6.18.12+kali-common/include -I/usr/src/linux-headers-6.18.12+kali-amd64/include -I/usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/uapi -I/usr/src/linux-headers-6.18.12+kali-amd64/arch/x86/include/generated/uapi -I/usr/src/linux-headers-6.18.12+kali-common/include/uapi -I/usr/src/linux-headers-6.18.12+kali-amd64/include/generated/uapi -include /usr/src/linux-headers-6.18.12+kali-common/include/linux/compiler-version.h -include /usr/src/linux-headers-6.18.12+kali-common/include/linux/kconfig.h -include /usr/src/linux-headers-6.18.12+kali-common/include/linux/compiler_types.h -D__KERNEL__ -std=gnu11 -fshort-wchar -funsigned-char -fno-common -fno-PIE -fno-strict-aliasing -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -mno-sse4a -fcf-protection=branch -fno-jump-tables -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -march=x86-64 -mtune=generic -mno-red-zone -mcmodel=kernel -mstack-protector-guard-reg=gs -mstack-protector-guard-symbol=__ref_stack_chk_guard -Wno-sign-compare -fno-asynchronous-unwind-tables -mindirect-branch=thunk-extern -mindirect-branch-register -mindirect-branch-cs-prefix -mfunction-return=thunk-extern -fno-jump-tables -mharden-sls=all -fpatchable-function-entry=16,16 -fno-delete-null-pointer-checks -O2 -fno-allow-store-data-races -fstack-protector-strong -ftrivial-auto-var-init=zero -fzero-init-padding-bits=all -fno-stack-clash-protection -pg -mrecord-mcount -mfentry -DCC_USING_FENTRY -fmin-function-alignment=16 -fstrict-flex-arrays=3 -fno-strict-overflow -fno-stack-check -fconserve-stack -fno-builtin-wcslen -Wall -Wextra -Wundef -Werror=implicit-function-declaration -Werror=implicit-int -Werror=return-type -Werror=strict-prototypes -Wno-format-security -Wno-trigraphs -Wno-frame-address -Wno-address-of-packed-member -Wmissing-declarations -Wmissing-prototypes -Wframe-larger-than=2048 -Wno-main -Wno-dangling-pointer -Wvla-larger-than=1 -Wno-pointer-sign -Wcast-function-type -Wno-unterminated-string-initialization -Wno-array-bounds -Wno-stringop-overflow -Wno-alloc-size-larger-than -Wimplicit-fallthrough=5 -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init -Wenum-conversion -Wunused -Wno-unused-but-set-variable -Wno-unused-const-variable -Wno-packed-not-aligned -Wno-format-overflow -Wno-format-truncation -Wno-stringop-truncation -Wno-override-init -Wno-missing-field-initializers -Wno-type-limits -Wno-shift-negative-value -Wno-maybe-uninitialized -Wno-sign-compare -Wno-unused-parameter -g  -fsanitize=bounds-strict -fsanitize=shift    -DMODULE  -DKBUILD_BASENAME='"ioctl_implement"' -DKBUILD_MODNAME='"ioctl_implement"' -D__KBUILD_MODNAME=kmod_ioctl_implement -c -o ioctl_implement.o ioctl_implement.c   ; /usr/src/linux-headers-6.18.12+kali-amd64/tools/objtool/objtool --hacks=jump_label --hacks=noinstr --hacks=skylake --ibt --orc --retpoline --rethunk --sls --static-call --uaccess --prefix=16  --link  --module ioctl_implement.o
 
-source_my_usb_driver.o := my_usb_driver.c
+source_ioctl_implement.o := ioctl_implement.c
 
-deps_my_usb_driver.o := \
+deps_ioctl_implement.o := \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/compiler-version.h \
     $(wildcard include/config/CC_VERSION_TEXT) \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/kconfig.h \
@@ -1125,64 +1125,9 @@ deps_my_usb_driver.o := \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/device/driver.h \
   /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/device.h \
   /usr/src/linux-headers-6.18.12+kali-common/include/linux/pm_wakeup.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/proc_fs.h \
-    $(wildcard include/config/PROC_PID_ARCH_STATUS) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/kthread.h \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/io.h \
-    $(wildcard include/config/MTRR) \
-    $(wildcard include/config/X86_PAT) \
-  /usr/src/linux-headers-6.18.12+kali-amd64/arch/x86/include/generated/asm/early_ioremap.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/early_ioremap.h \
-    $(wildcard include/config/GENERIC_EARLY_IOREMAP) \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/shared/io.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/io.h \
-    $(wildcard include/config/GENERIC_IOMAP) \
-    $(wildcard include/config/TRACE_MMIO_ACCESS) \
-    $(wildcard include/config/HAS_IOPORT) \
-    $(wildcard include/config/GENERIC_IOREMAP) \
-    $(wildcard include/config/HAS_IOPORT_MAP) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/sizes.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/iomap.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/pci_iomap.h \
-    $(wildcard include/config/PCI) \
-    $(wildcard include/config/NO_GENERIC_PCI_IOPORT_MAP) \
-    $(wildcard include/config/GENERIC_PCI_IOMAP) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/logic_pio.h \
-    $(wildcard include/config/INDIRECT_PIO) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/fwnode.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/interrupt.h \
-    $(wildcard include/config/IRQ_FORCED_THREADING) \
-    $(wildcard include/config/GENERIC_IRQ_PROBE) \
-    $(wildcard include/config/IRQ_TIMINGS) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/irqreturn.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/hardirq.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/context_tracking_state.h \
-    $(wildcard include/config/CONTEXT_TRACKING_USER) \
-    $(wildcard include/config/CONTEXT_TRACKING) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/ftrace_irq.h \
-    $(wildcard include/config/HWLAT_TRACER) \
-    $(wildcard include/config/OSNOISE_TRACER) \
-  /usr/src/linux-headers-6.18.12+kali-common/include/linux/vtime.h \
-    $(wildcard include/config/VIRT_CPU_ACCOUNTING) \
-    $(wildcard include/config/IRQ_TIME_ACCOUNTING) \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/hardirq.h \
-    $(wildcard include/config/KVM_INTEL) \
-    $(wildcard include/config/KVM) \
-    $(wildcard include/config/X86_THERMAL_VECTOR) \
-    $(wildcard include/config/X86_MCE_THRESHOLD) \
-    $(wildcard include/config/X86_MCE_AMD) \
-    $(wildcard include/config/X86_HV_CALLBACK_VECTOR) \
-    $(wildcard include/config/HYPERV) \
-    $(wildcard include/config/X86_POSTED_MSI) \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/irq.h \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/irq_vectors.h \
-    $(wildcard include/config/PCI_MSI) \
-  /usr/src/linux-headers-6.18.12+kali-common/arch/x86/include/asm/sections.h \
-  /usr/src/linux-headers-6.18.12+kali-common/include/asm-generic/sections.h \
-    $(wildcard include/config/HAVE_FUNCTION_DESCRIPTORS) \
 
-my_usb_driver.o: $(deps_my_usb_driver.o)
+ioctl_implement.o: $(deps_ioctl_implement.o)
 
-$(deps_my_usb_driver.o):
+$(deps_ioctl_implement.o):
 
-my_usb_driver.o: $(wildcard /usr/src/linux-headers-6.18.12+kali-amd64/tools/objtool/objtool)
+ioctl_implement.o: $(wildcard /usr/src/linux-headers-6.18.12+kali-amd64/tools/objtool/objtool)

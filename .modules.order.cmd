@@ -1,1 +1,1 @@
-savedcmd_modules.order := {   echo my_usb_driver.o; :; } > modules.order
+savedcmd_modules.order := {   echo proc_fs.o; :; } > modules.order

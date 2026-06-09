@@ -1,19 +1,1039 @@
-[    2.975321] ACPI: bus type USB registered
-[    3.393906] ohci-pci 0000:00:06.0: new USB bus registered, assigned bus number 1
-[    3.469238] usb usb1: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 6.18
-[    3.469242] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
-[    3.471485] hub 1-0:1.0: USB hub found
-[    3.828107] usb 1-1: new full-speed USB device number 2 using ohci-pci
-[    4.127637] usb 1-1: New USB device found, idVendor=80ee, idProduct=0021, bcdDevice= 1.00
-[    4.127643] usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=0
-[    4.127645] usb 1-1: Product: USB Tablet
-[    4.174066] usbhid: USB HID core driver
-[    4.183145] input: VirtualBox USB Tablet as /devices/pci0000:00/0000:00:06.0/usb1/1-1/1-1:1.0/0003:80EE:0021.0001/input/input6
-[    4.185714] hid-generic 0003:80EE:0021.0001: input,hidraw0: USB HID v1.10 Mouse [VirtualBox USB Tablet] on usb-0000:00:06.0-1/input0
-[ 1171.677492] USB: Major:243 Minor: 0
-[ 1171.684896] USB: Kernel module inserted........
-[ 1183.448987] USB: Driver open called....
-[ 1185.393031] USB: arg address received : 55e8d7680048
-[ 1185.393037] USB: value written is is:10
-[ 1185.393047] USB: arg address received : 55e8d7680044
-[ 1185.393059] USB: driver release called.....
+[    0.000000] Linux version 6.18.12+kali-amd64 (devel@kali.org) (x86_64-linux-gnu-gcc-15 (Debian 15.2.0-13) 15.2.0, GNU ld (GNU Binutils for Debian) 2.46) #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-6.18.12+kali-amd64 root=UUID=894e89ec-b178-42b7-a450-6e969a2aa8fe ro quiet splash
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x000000007ffeffff] usable
+[    0.000000] BIOS-e820: [mem 0x000000007fff0000-0x000000007fffffff] ACPI data
+[    0.000000] BIOS-e820: [mem 0x00000000fec00000-0x00000000fec00fff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fee00000-0x00000000fee00fff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] APIC: Static calls initialized
+[    0.000000] SMBIOS 2.5 present.
+[    0.000000] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[    0.000000] DMI: Memory slots populated: 0/0
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] last_pfn = 0x80000 max_arch_pfn = 0x400000000
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000007] kvm-clock: using sched offset of 33498059435 cycles
+[    0.000013] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000022] tsc: Detected 2495.998 MHz processor
+[    0.006972] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.006981] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.006993] last_pfn = 0x80000 max_arch_pfn = 0x400000000
+[    0.007035] MTRRs disabled by BIOS
+[    0.007039] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[    0.007230] found SMP MP-table at [mem 0x0009fff0-0x0009ffff]
+[    0.007595] RAMDISK: [mem 0x1f375000-0x2b9b1fff]
+[    0.012576] ACPI: Early table checksum verification disabled
+[    0.012586] ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
+[    0.012600] ACPI: XSDT 0x000000007FFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+[    0.012615] ACPI: FACP 0x000000007FFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+[    0.012630] ACPI: DSDT 0x000000007FFF0610 002353 (v02 VBOX   VBOXBIOS 00000002 INTL 20100528)
+[    0.012641] ACPI: FACS 0x000000007FFF0200 000040
+[    0.012650] ACPI: FACS 0x000000007FFF0200 000040
+[    0.012658] ACPI: APIC 0x000000007FFF0240 00005C (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+[    0.012668] ACPI: SSDT 0x000000007FFF02A0 00036C (v01 VBOX   VBOXCPUT 00000002 INTL 20100528)
+[    0.012675] ACPI: Reserving FACP table memory at [mem 0x7fff00f0-0x7fff01e3]
+[    0.012680] ACPI: Reserving DSDT table memory at [mem 0x7fff0610-0x7fff2962]
+[    0.012683] ACPI: Reserving FACS table memory at [mem 0x7fff0200-0x7fff023f]
+[    0.012686] ACPI: Reserving FACS table memory at [mem 0x7fff0200-0x7fff023f]
+[    0.012688] ACPI: Reserving APIC table memory at [mem 0x7fff0240-0x7fff029b]
+[    0.012690] ACPI: Reserving SSDT table memory at [mem 0x7fff02a0-0x7fff060b]
+[    0.015788] No NUMA configuration found
+[    0.015794] Faking a node at [mem 0x0000000000000000-0x000000007fffffff]
+[    0.015828] NODE_DATA(0) allocated [mem 0x7ffc5500-0x7ffeffff]
+[    0.016630] Zone ranges:
+[    0.016633]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.016639]   DMA32    [mem 0x0000000001000000-0x000000007fffffff]
+[    0.016643]   Normal   empty
+[    0.016646]   Device   empty
+[    0.016649] Movable zone start for each node
+[    0.016655] Early memory node ranges
+[    0.016656]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.016660]   node   0: [mem 0x0000000000100000-0x000000007ffeffff]
+[    0.016664] Initmem setup node 0 [mem 0x0000000000001000-0x000000007ffeffff]
+[    0.016676] On node 0, zone DMA: 1 pages in unavailable ranges
+[    0.016722] On node 0, zone DMA: 97 pages in unavailable ranges
+[    0.017575] On node 0, zone DMA32: 16 pages in unavailable ranges
+[    0.022012] ACPI: PM-Timer IO Port: 0x4008
+[    0.022697] IOAPIC[0]: apic_id 2, version 32, address 0xfec00000, GSI 0-23
+[    0.022707] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.022712] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+[    0.022722] ACPI: Using ACPI (MADT) for SMP configuration information
+[    0.022732] CPU topo: Max. logical packages:   1
+[    0.022734] CPU topo: Max. logical dies:       1
+[    0.022734] CPU topo: Max. dies per package:   1
+[    0.022742] CPU topo: Max. threads per core:   1
+[    0.022743] CPU topo: Num. cores per package:     2
+[    0.022744] CPU topo: Num. threads per package:   2
+[    0.022745] CPU topo: Allowing 2 present CPUs plus 0 hotplug CPUs
+[    0.022969] PM: hibernation: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.022974] PM: hibernation: Registered nosave memory: [mem 0x0009f000-0x000fffff]
+[    0.022977] PM: hibernation: Registered nosave memory: [mem 0x7fff0000-0x7fffffff]
+[    0.022980] [mem 0x80000000-0xfebfffff] available for PCI devices
+[    0.022982] Booting paravirtualized kernel on KVM
+[    0.022985] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+[    0.035347] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
+[    0.035664] percpu: Embedded 62 pages/cpu s217088 r8192 d28672 u1048576
+[    0.035677] pcpu-alloc: s217088 r8192 d28672 u1048576 alloc=1*2097152
+[    0.035683] pcpu-alloc: [0] 0 1 
+[    0.035931] kvm-guest: PV spinlocks enabled
+[    0.035940] PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.035950] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-6.18.12+kali-amd64 root=UUID=894e89ec-b178-42b7-a450-6e969a2aa8fe ro quiet splash
+[    0.036073] Unknown kernel command line parameters "splash", will be passed to user space.
+[    0.036097] random: crng init done
+[    0.036099] printk: log buffer data + meta data: 131072 + 458752 = 589824 bytes
+[    0.036416] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.037397] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.037598] Fallback order for Node 0: 0 
+[    0.037605] Built 1 zonelists, mobility grouping on.  Total pages: 524174
+[    0.037607] Policy zone: DMA32
+[    0.037621] mem auto-init: stack:all(zero), heap alloc:on, heap free:off
+[    0.041319] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.060383] ftrace: allocating 48103 entries in 188 pages
+[    0.060388] ftrace: allocated 188 pages with 5 groups
+[    0.060992] Dynamic Preempt: lazy
+[    0.061025] rcu: Preemptible hierarchical RCU implementation.
+[    0.061026] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=2.
+[    0.061028] 	Trampoline variant of Tasks RCU enabled.
+[    0.061028] 	Rude variant of Tasks RCU enabled.
+[    0.061029] 	Tracing variant of Tasks RCU enabled.
+[    0.061030] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.061030] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    0.061037] RCU Tasks: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+[    0.061039] RCU Tasks Rude: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+[    0.061040] RCU Tasks Trace: Setting shift to 1 and lim to 1 rcu_task_cb_adjust=1 rcu_task_cpu_ids=2.
+[    0.072874] NR_IRQS: 524544, nr_irqs: 440, preallocated irqs: 16
+[    0.073543] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.211548] Console: colour VGA+ 80x25
+[    0.211563] printk: legacy console [tty0] enabled
+[    0.211671] ACPI: Core revision 20250807
+[    0.213690] APIC: Switch to symmetric I/O mode setup
+[    0.251239] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.252093] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x23fa754787d, max_idle_ns: 440795210092 ns
+[    0.252114] Calibrating delay loop (skipped) preset value.. 4991.99 BogoMIPS (lpj=9983992)
+[    0.257541] Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+[    0.257546] Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+[    0.257560] mitigations: Enabled attack vectors: user_kernel, user_user, guest_host, guest_guest, SMT mitigations: auto
+[    0.257566] Speculative Store Bypass: Vulnerable
+[    0.257568] Spectre V2 : Mitigation: Enhanced / Automatic IBRS
+[    0.257570] RETBleed: Mitigation: Enhanced IBRS
+[    0.257571] ITS: Mitigation: Aligned branch/return thunks
+[    0.257572] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.257574] Spectre V2 : Spectre v2 / PBRSB-eIBRS: Retire a single CALL on VMEXIT
+[    0.257592] active return thunk: its_return_thunk
+[    0.257598] Spectre V2 : Spectre BHI mitigation: SW BHB clearing on syscall and VM exit
+[    0.257601] x86/fpu: x87 FPU will use FXSAVE
+[    0.336316] Freeing SMP alternatives memory: 44K
+[    0.336334] pid_max: default: 32768 minimum: 301
+[    0.336458] LSM: initializing lsm=lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,ipe,ima,evm
+[    0.336579] landlock: Up and running.
+[    0.336581] Yama: disabled by default; enable with sysctl kernel.yama.*
+[    0.336888] AppArmor: AppArmor initialized
+[    0.336933] TOMOYO Linux initialized
+[    0.337253] LSM support for eBPF active
+[    0.337387] Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.337405] Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+[    0.452693] APIC calibration not consistent with PM-Timer: 101ms instead of 100ms
+[    0.452703] APIC delta adjusted to PM-Timer: 6364301 (6444737)
+[    0.453764] smpboot: CPU0: 11th Gen Intel(R) Core(TM) i5-1155G7 @ 2.50GHz (family: 0x6, model: 0x8c, stepping: 0x2)
+[    0.454542] Performance Events: unsupported CPU family 6 model 140 no PMU driver, software events only.
+[    0.454740] signal: max sigframe size: 1440
+[    0.454830] rcu: Hierarchical SRCU implementation.
+[    0.454833] rcu: 	Max phase no-delay instances is 1000.
+[    0.455077] Timer migration: 1 hierarchy levels; 8 children per group; 1 crossnode level
+[    0.458538] NMI watchdog: Perf NMI watchdog permanently disabled
+[    0.458612] smp: Bringing up secondary CPUs ...
+[    0.458829] smpboot: x86: Booting SMP configuration:
+[    0.458832] .... node  #0, CPUs:      #1
+[    0.470196] TSC synchronization [CPU#0 -> CPU#1]:
+[    0.470207] Measured 176315 cycles TSC warp between CPUs, turning off TSC clock.
+[    0.470232] tsc: Marking TSC unstable due to check_tsc_sync_source failed
+[    0.473504] smp: Brought up 1 node, 2 CPUs
+[    0.473511] smpboot: Total of 2 processors activated (9983.99 BogoMIPS)
+[    0.487668] node 0 deferred pages initialised in 8ms
+[    0.488461] Memory: 1801132K/2096696K available (17655K kernel code, 3334K rwdata, 12852K rodata, 4448K init, 3624K bss, 289392K reserved, 0K cma-reserved)
+[    0.489586] devtmpfs: initialized
+[    0.489586] x86/mm: Memory block size: 128MB
+[    0.492863] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.492863] posixtimers hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    0.492863] futex hash table entries: 512 (32768 bytes on 1 NUMA nodes, total 32 KiB, linear).
+[    0.492863] pinctrl core: initialized pinctrl subsystem
+[    0.500673] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.501069] DMA: preallocated 256 KiB GFP_KERNEL pool for atomic allocations
+[    0.501132] DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.501185] DMA: preallocated 256 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.501205] audit: initializing netlink subsys (disabled)
+[    0.501463] thermal_sys: Registered thermal governor 'fair_share'
+[    0.501463] thermal_sys: Registered thermal governor 'bang_bang'
+[    0.501463] thermal_sys: Registered thermal governor 'step_wise'
+[    0.501463] thermal_sys: Registered thermal governor 'user_space'
+[    0.501463] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.501463] audit: type=2000 audit(1777911281.981:1): state=initialized audit_enabled=0 res=1
+[    0.501463] cpuidle: using governor ladder
+[    0.501463] cpuidle: using governor menu
+[    0.501463] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.501463] PCI: Using configuration type 1 for base access
+[    0.501623] kprobes: kprobe jump-optimization is enabled. All kprobes are optimized if possible.
+[    0.520577] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.520587] HugeTLB: 28 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.578422] ACPI: Added _OSI(Module Device)
+[    0.578425] ACPI: Added _OSI(Processor Device)
+[    0.578426] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.578426] ACPI: 2 ACPI AML tables successfully acquired and loaded
+[    0.588506] ACPI: Interpreter enabled
+[    0.588532] ACPI: PM: (supports S0 S5)
+[    0.588536] ACPI: Using IOAPIC for interrupt routing
+[    0.589553] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.589559] PCI: Using E820 reservations for host bridge windows
+[    0.589956] ACPI: Enabled 2 GPEs in block 00 to 07
+[    0.618327] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.618343] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI HPX-Type3]
+[    0.618350] acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+[    0.620830] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended configuration space under this bridge
+[    0.622724] PCI host bridge to bus 0000:00
+[    0.622738] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.622746] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.622751] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.622756] pci_bus 0000:00: root bus resource [mem 0x80000000-0xfdffffff window]
+[    0.622761] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.625336] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000 conventional PCI endpoint
+[    0.632578] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100 conventional PCI endpoint
+[    0.638228] pci 0000:00:01.1: [8086:7111] type 00 class 0x01018a conventional PCI endpoint
+[    0.642203] pci 0000:00:01.1: BAR 4 [io  0xd000-0xd00f]
+[    0.642600] pci 0000:00:01.1: BAR 0 [io  0x01f0-0x01f7]: legacy IDE quirk
+[    0.642605] pci 0000:00:01.1: BAR 1 [io  0x03f6]: legacy IDE quirk
+[    0.642607] pci 0000:00:01.1: BAR 2 [io  0x0170-0x0177]: legacy IDE quirk
+[    0.642609] pci 0000:00:01.1: BAR 3 [io  0x0376]: legacy IDE quirk
+[    0.648979] pci 0000:00:02.0: [15ad:0405] type 00 class 0x030000 conventional PCI endpoint
+[    0.652204] pci 0000:00:02.0: BAR 0 [io  0xd010-0xd01f]
+[    0.652297] pci 0000:00:02.0: BAR 1 [mem 0xe0000000-0xe7ffffff pref]
+[    0.652472] pci 0000:00:02.0: BAR 2 [mem 0xf0000000-0xf01fffff]
+[    0.653153] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    0.655041] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000 conventional PCI endpoint
+[    0.658663] pci 0000:00:03.0: BAR 0 [mem 0xf0200000-0xf021ffff]
+[    0.658845] pci 0000:00:03.0: BAR 2 [io  0xd020-0xd027]
+[    0.665214] pci 0000:00:04.0: [80ee:cafe] type 00 class 0x088000 conventional PCI endpoint
+[    0.669621] pci 0000:00:04.0: BAR 0 [io  0xd040-0xd05f]
+[    0.669693] pci 0000:00:04.0: BAR 1 [mem 0xf0400000-0xf07fffff]
+[    0.669760] pci 0000:00:04.0: BAR 2 [mem 0xf0800000-0xf0803fff pref]
+[    0.672114] pci 0000:00:05.0: [8086:2415] type 00 class 0x040100 conventional PCI endpoint
+[    0.675053] pci 0000:00:05.0: BAR 0 [io  0xd100-0xd1ff]
+[    0.675143] pci 0000:00:05.0: BAR 1 [io  0xd200-0xd23f]
+[    0.678171] pci 0000:00:06.0: [106b:003f] type 00 class 0x0c0310 conventional PCI endpoint
+[    0.682507] pci 0000:00:06.0: BAR 0 [mem 0xf0804000-0xf0804fff]
+[    0.689970] pci 0000:00:07.0: [8086:7113] type 00 class 0x068000 conventional PCI endpoint
+[    0.692231] pci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI
+[    0.692418] pci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB
+[    0.696647] pci 0000:00:0d.0: [8086:2829] type 00 class 0x010601 conventional PCI endpoint
+[    0.701096] pci 0000:00:0d.0: BAR 0 [io  0xd240-0xd247]
+[    0.701188] pci 0000:00:0d.0: BAR 1 [io  0xd248-0xd24b]
+[    0.701388] pci 0000:00:0d.0: BAR 2 [io  0xd250-0xd257]
+[    0.701470] pci 0000:00:0d.0: BAR 3 [io  0xd258-0xd25b]
+[    0.701551] pci 0000:00:0d.0: BAR 4 [io  0xd260-0xd26f]
+[    0.701633] pci 0000:00:0d.0: BAR 5 [mem 0xf0806000-0xf0807fff]
+[    0.730494] ACPI: PCI: Interrupt link LNKA configured for IRQ 11
+[    0.732314] ACPI: PCI: Interrupt link LNKB configured for IRQ 10
+[    0.732757] ACPI: PCI: Interrupt link LNKC configured for IRQ 9
+[    0.733126] ACPI: PCI: Interrupt link LNKD configured for IRQ 11
+[    0.736284] iommu: Default domain type: Translated
+[    0.736284] iommu: DMA domain TLB invalidation policy: lazy mode
+[    0.736538] pps_core: LinuxPPS API ver. 1 registered
+[    0.736538] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.736538] PTP clock support registered
+[    0.736538] EDAC MC: Ver: 3.0.0
+[    0.744114] NetLabel: Initializing
+[    0.744114] NetLabel:  domain hash size = 128
+[    0.744114] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    0.744114] NetLabel:  unlabeled traffic allowed by default
+[    0.744114] PCI: Using ACPI for IRQ routing
+[    0.744114] PCI: pci_cache_line_size set to 64 bytes
+[    0.745017] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[    0.745021] e820: reserve RAM buffer [mem 0x7fff0000-0x7fffffff]
+[    0.748415] pci 0000:00:02.0: vgaarb: setting as boot VGA device
+[    0.748415] pci 0000:00:02.0: vgaarb: bridge control possible
+[    0.748415] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    0.748415] vgaarb: loaded
+[    0.748964] clocksource: Switched to clocksource kvm-clock
+[    0.749563] VFS: Disk quotas dquot_6.6.0
+[    0.749591] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.759236] AppArmor: AppArmor Filesystem Enabled
+[    0.759337] pnp: PnP ACPI init
+[    0.763897] pnp: PnP ACPI: found 2 devices
+[    0.857077] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.857251] NET: Registered PF_INET protocol family
+[    0.857423] IP idents hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.895064] tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
+[    0.895112] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.895144] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.895239] TCP bind hash table entries: 16384 (order: 7, 524288 bytes, linear)
+[    0.895325] TCP: Hash tables configured (established 16384 bind 16384)
+[    0.895448] MPTCP token hash table entries: 2048 (order: 4, 49152 bytes, linear)
+[    0.896286] UDP hash table entries: 1024 (order: 4, 65536 bytes, linear)
+[    0.896309] UDP-Lite hash table entries: 1024 (order: 4, 65536 bytes, linear)
+[    0.896512] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.896531] NET: Registered PF_XDP protocol family
+[    0.896557] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    0.896565] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    0.896570] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    0.896574] pci_bus 0000:00: resource 7 [mem 0x80000000-0xfdffffff window]
+[    0.896750] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    0.907426] PCI: CLS 0 bytes, default 64
+[    0.908227] platform rtc_cmos: registered platform RTC device (no PNP device found)
+[    0.911421] Trying to unpack rootfs image as initramfs...
+[    0.955693] Initialise system trusted keyrings
+[    0.955711] Key type blacklist registered
+[    0.959229] workingset: timestamp_bits=36 max_order=19 bucket_order=0
+[    0.975180] fuse: init (API version 7.45)
+[    0.981721] integrity: Platform Keyring initialized
+[    0.981737] integrity: Machine keyring initialized
+[    1.007907] Key type asymmetric registered
+[    1.007907] Asymmetric key parser 'x509' registered
+[    1.007907] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+[    1.007907] io scheduler mq-deadline registered
+[    1.035110] ledtrig-cpu: registered to indicate activity on CPUs
+[    1.044658] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    1.063101] Linux agpgart interface v0.103
+[    1.068567] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+[    1.080693] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    1.080722] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    1.080978] mousedev: PS/2 mouse device common for all mice
+[    1.085987] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input0
+[    1.093595] rtc_cmos rtc_cmos: registered as rtc0
+[    1.097931] rtc_cmos rtc_cmos: setting system clock to 2026-05-04T16:14:07 UTC (1777911247)
+[    1.098815] rtc_cmos rtc_cmos: alarms up to one day, 114 bytes nvram
+[    1.098874] intel_pstate: CPU model not supported
+[    1.099353] NET: Registered PF_INET6 protocol family
+[    1.106417] Segment Routing with IPv6
+[    1.106422] RPL Segment Routing with IPv6
+[    1.106976] In-situ OAM (IOAM) with IPv6
+[    1.107015] mip6: Mobile IPv6
+[    1.107023] NET: Registered PF_PACKET protocol family
+[    1.108131] mpls_gso: MPLS GSO support
+[    1.112060] IPI shorthand broadcast: enabled
+[    1.115648] sched_clock: Marking stable (937391351, 174291808)->(1120675085, -8991926)
+[    1.117492] registered taskstats version 1
+[    1.120196] Loading compiled-in X.509 certificates
+[    5.832140] Freeing initrd memory: 202996K
+[    5.943601] Loaded X.509 cert 'Build time autogenerated kernel key: 82748024bf97d64d411057d887546d2616b0506b'
+[    5.946772] Demotion targets for Node 0: null
+[    5.949023] Key type .fscrypt registered
+[    5.949027] Key type fscrypt-provisioning registered
+[    6.021423] Key type encrypted registered
+[    6.021434] AppArmor: AppArmor sha256 policy hashing enabled
+[    6.021516] ima: No TPM chip found, activating TPM-bypass!
+[    6.021536] ima: Allocated hash algorithm: sha256
+[    6.023526] ima: No architecture policies found
+[    6.023565] evm: Initialising EVM extended attributes:
+[    6.023567] evm: security.selinux
+[    6.023569] evm: security.SMACK64 (disabled)
+[    6.023571] evm: security.SMACK64EXEC (disabled)
+[    6.023573] evm: security.SMACK64TRANSMUTE (disabled)
+[    6.023574] evm: security.SMACK64MMAP (disabled)
+[    6.023575] evm: security.apparmor
+[    6.023577] evm: security.ima
+[    6.023578] evm: security.capability
+[    6.023579] evm: HMAC attrs: 0x1
+[    6.116182] RAS: Correctable Errors collector initialized.
+[    6.133596] clk: Disabling unused clocks
+[    6.133601] PM: genpd: Disabling unused power domains
+[    6.140632] Freeing unused decrypted memory: 2028K
+[    6.144211] Freeing unused kernel image (initmem) memory: 4448K
+[    6.144291] Write protecting the kernel read-only data: 32768k
+[    6.147635] Freeing unused kernel image (text/rodata gap) memory: 776K
+[    6.149309] Freeing unused kernel image (rodata/data gap) memory: 1484K
+[    6.187292] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    6.187310] Run /init as init process
+[    6.187314]   with arguments:
+[    6.187316]     /init
+[    6.187318]     splash
+[    6.187320]   with environment:
+[    6.187321]     HOME=/
+[    6.187322]     TERM=linux
+[    6.960730] e1000: Intel(R) PRO/1000 Network Driver
+[    6.960747] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    6.973751] piix4_smbus 0000:00:07.0: SMBus Host Controller at 0x4100, revision 0
+[    7.081510] SCSI subsystem initialized
+[    7.167929] ACPI: bus type USB registered
+[    7.167997] usbcore: registered new interface driver usbfs
+[    7.168015] usbcore: registered new interface driver hub
+[    7.168033] usbcore: registered new device driver usb
+[    7.226085] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input2
+[    7.235739] ACPI: bus type drm_connector registered
+[    7.256752] ACPI: button: Power Button [PWRF]
+[    7.256892] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input3
+[    7.257148] ACPI: button: Sleep Button [SLPF]
+[    7.408009] libata version 3.00 loaded.
+[    7.419572] ACPI: battery: Slot [BAT0] (battery present)
+[    7.454616] ACPI: video: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+[    7.455013] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input4
+[    7.615523] Warning! ehci_hcd should always be loaded before uhci_hcd and ohci_hcd, not after
+[    7.658712] scsi host0: ata_piix
+[    7.659059] scsi host1: ata_piix
+[    7.659157] ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14 lpm-pol 0
+[    7.659163] ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15 lpm-pol 0
+[    7.722066] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input5
+[    7.732843] ahci 0000:00:0d.0: SSS flag set, parallel bus scan disabled
+[    7.735438] ahci 0000:00:0d.0: AHCI vers 0001.0100, 32 command slots, 3 Gbps, SATA mode
+[    7.735445] ahci 0000:00:0d.0: 1/1 ports implemented (port mask 0x1)
+[    7.735448] ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc 
+[    7.742743] scsi host2: ahci
+[    7.742929] ata3: SATA max UDMA/133 abar m8192@0xf0806000 port 0xf0806100 irq 21 lpm-pol 1
+[    7.817064] vmwgfx 0000:00:02.0: vgaarb: deactivate vga console
+[    7.873165] ata2.00: ATAPI: VBOX CD-ROM, 1.0, max UDMA/133
+[    7.895878] scsi 1:0:0:0: CD-ROM            VBOX     CD-ROM           1.0  PQ: 0 ANSI: 5
+[    7.929514] Console: switching to colour dummy device 80x25
+[    7.932284] vmwgfx 0000:00:02.0: [drm] FIFO at 0x00000000f0000000 size is 2048 KiB
+[    7.932311] vmwgfx 0000:00:02.0: [drm] VRAM at 0x00000000e0000000 size is 131072 KiB
+[    7.933735] vmwgfx 0000:00:02.0: [drm] Running on SVGA version 2.
+[    7.933810] vmwgfx 0000:00:02.0: [drm] Capabilities: rect copy, cursor, cursor bypass, cursor bypass 2, alpha cursor, extended fifo, pitchlock, irq mask, gmr, traces, gmr2, screen object 2, command buffers, 
+[    7.933815] vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+[    7.933824] vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+[    7.933828] vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+[    7.933833] vmwgfx 0000:00:02.0: [drm] DMA map mode: Caching DMA mappings.
+[    7.934372] vmwgfx 0000:00:02.0: [drm] Legacy memory limits: VRAM = 131072 KiB, FIFO = 2048 KiB, surface = 393216 KiB
+[    7.934377] vmwgfx 0000:00:02.0: [drm] MOB limits: max mob size = 0 KiB, max mob pages = 0
+[    7.934380] vmwgfx 0000:00:02.0: [drm] Max GMR ids is 8192
+[    7.934382] vmwgfx 0000:00:02.0: [drm] Max number of GMR pages is 1048576
+[    7.934384] vmwgfx 0000:00:02.0: [drm] Maximum display memory size is 131072 KiB
+[    7.936152] vmwgfx 0000:00:02.0: [drm] Screen Object display unit initialized
+[    7.936978] vmwgfx 0000:00:02.0: [drm] Fifo max 0x00200000 min 0x00001000 cap 0x00000355
+[    7.937490] vmwgfx 0000:00:02.0: [drm] Using command buffers with DMA pool.
+[    7.937508] vmwgfx 0000:00:02.0: [drm] Available shader model: Legacy.
+[    7.943967] [drm] Initialized vmwgfx 2.21.0 for 0000:00:02.0 on minor 0
+[    7.948272] fbcon: vmwgfxdrmfb (fb0) is primary device
+[    7.948378] vmwgfx 0000:00:02.0: [drm] Unknown Cursor Type!
+[    7.948534] Console: switching to colour frame buffer device 160x50
+[    7.949793] vmwgfx 0000:00:02.0: [drm] fb0: vmwgfxdrmfb frame buffer device
+[    8.064316] ata3: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[    8.066695] ata3.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+[    8.066706] ata3.00: 167968750 sectors, multi 128: LBA48 NCQ (depth 32)
+[    8.074867] ata3.00: configured for UDMA/133
+[    8.076359] scsi 2:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+[    8.101728] ohci-pci 0000:00:06.0: OHCI PCI host controller
+[    8.101835] ohci-pci 0000:00:06.0: new USB bus registered, assigned bus number 1
+[    8.111369] ohci-pci 0000:00:06.0: irq 22, io mem 0xf0804000
+[    8.199609] usb usb1: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 6.18
+[    8.199622] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    8.199627] usb usb1: Product: OHCI PCI host controller
+[    8.199631] usb usb1: Manufacturer: Linux 6.18.12+kali-amd64 ohci_hcd
+[    8.199634] usb usb1: SerialNumber: 0000:00:06.0
+[    8.200367] hub 1-0:1.0: USB hub found
+[    8.203832] hub 1-0:1.0: 12 ports detected
+[    8.209893] sr 1:0:0:0: [sr0] scsi3-mmc drive: 32x/32x xa/form2 tray
+[    8.210834] cdrom: Uniform CD-ROM driver Revision: 3.20
+[    8.255440] sr 1:0:0:0: Attached scsi CD-ROM sr0
+[    8.261417] sd 2:0:0:0: [sda] 167968750 512-byte logical blocks: (86.0 GB/80.1 GiB)
+[    8.261432] sd 2:0:0:0: [sda] Write Protect is off
+[    8.261435] sd 2:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    8.261450] sd 2:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    8.261479] sd 2:0:0:0: [sda] Preferred minimum I/O size 512 bytes
+[    8.291904]  sda: sda1
+[    8.292132] sd 2:0:0:0: [sda] Attached SCSI disk
+[    8.596396] usb 1-1: new full-speed USB device number 2 using ohci-pci
+[    8.850484] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 08:00:27:8a:35:d2
+[    8.850511] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+[    9.132927] usb 1-1: New USB device found, idVendor=80ee, idProduct=0021, bcdDevice= 1.00
+[    9.132939] usb 1-1: New USB device strings: Mfr=1, Product=3, SerialNumber=0
+[    9.132944] usb 1-1: Product: USB Tablet
+[    9.132947] usb 1-1: Manufacturer: VirtualBox
+[    9.180177] hid: raw HID events driver (C) Jiri Kosina
+[    9.223523] usbcore: registered new interface driver usbhid
+[    9.223530] usbhid: USB HID core driver
+[    9.244546] input: VirtualBox USB Tablet as /devices/pci0000:00/0000:00:06.0/usb1/1-1/1-1:1.0/0003:80EE:0021.0001/input/input6
+[    9.245167] hid-generic 0003:80EE:0021.0001: input,hidraw0: USB HID v1.10 Mouse [VirtualBox USB Tablet] on usb-0000:00:06.0-1/input0
+[   10.794661] EXT4-fs (sda1): orphan cleanup on readonly fs
+[   10.795992] EXT4-fs (sda1): mounted filesystem 894e89ec-b178-42b7-a450-6e969a2aa8fe ro with ordered data mode. Quota mode: none.
+[   11.104892] Not activating Mandatory Access Control as /sbin/tomoyo-init does not exist.
+[   11.384217] systemd[1]: Inserted module 'autofs4'
+[   11.770861] systemd[1]: systemd 259.1-1 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +IPE +SMACK +SECCOMP +GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 -IDN +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK +BTF -XKBCOMMON -UTMP +SYSVINIT +LIBARCHIVE)
+[   11.770880] systemd[1]: Detected virtualization oracle.
+[   11.771114] systemd[1]: Detected architecture x86-64.
+[   11.773066] systemd[1]: Failed to read SMBIOS type #11 object 0, ignoring: Bad message
+[   11.777890] systemd[1]: Hostname set to <kali>.
+[   12.483319] systemd[1]: bpf-restrict-fs: LSM BPF program attached
+[   12.571343] systemd-sslh-generator: Configuration directory '/etc/sslh/' does not exist! No units generated.
+[   12.635147] systemd-fstab-generator[281]: Mount point <dump> is not a valid path, ignoring.
+[   12.685365] systemd-sysv-generator[290]: SysV service '/etc/init.d/stunnel4' lacks a native systemd unit file, automatically generating a unit file for compatibility.
+[   12.685382] systemd-sysv-generator[290]: Please update package to include a native systemd unit file.
+[   12.685388] systemd-sysv-generator[290]: ! This compatibility logic is deprecated, expect removal soon. !
+[   12.751560] Guest personality initialized and is inactive
+[   12.751656] VMCI host device registered (name=vmci, major=10, minor=260)
+[   12.751659] Initialized host personality
+[   12.787135] NET: Registered PF_VSOCK protocol family
+[   13.407982] systemd[1]: Queued start job for default target graphical.target.
+[   13.463435] systemd[1]: Created slice system-getty.slice - Slice /system/getty.
+[   13.464979] systemd[1]: Created slice system-modprobe.slice - Slice /system/modprobe.
+[   13.465663] systemd[1]: Created slice user.slice - User and Session Slice.
+[   13.465834] systemd[1]: Started systemd-ask-password-wall.path - Forward Password Requests to Wall Directory Watch.
+[   13.466254] systemd[1]: Set up automount proc-sys-fs-binfmt_misc.automount - Arbitrary Executable File Formats File System Automount Point.
+[   13.466326] systemd[1]: Reached target imports.target - Image Downloads.
+[   13.466390] systemd[1]: Reached target nss-user-lookup.target - User and Group Name Lookups.
+[   13.466443] systemd[1]: Reached target slices.target - Slice Units.
+[   13.466536] systemd[1]: Reached target stunnel.target - TLS tunnels for network services - per-config-file target.
+[   13.466587] systemd[1]: Reached target time-set.target - System Time Set.
+[   13.472548] systemd[1]: Listening on systemd-ask-password.socket - Query the User Interactively for a Password.
+[   13.477166] systemd[1]: Listening on systemd-creds.socket - Credential Encryption/Decryption.
+[   13.481736] systemd[1]: Listening on systemd-factory-reset.socket - Factory Reset Management.
+[   13.482045] systemd[1]: Listening on systemd-journald-dev-log.socket - Journal Socket (/dev/log).
+[   13.482408] systemd[1]: Listening on systemd-journald.socket - Journal Sockets.
+[   13.489325] systemd[1]: Listening on systemd-mute-console.socket - Console Output Muting Service Socket.
+[   13.489397] systemd[1]: systemd-pcrextend.socket - TPM PCR Measurements skipped, unmet condition check ConditionSecurity=measured-uki
+[   13.489432] systemd[1]: systemd-pcrlock.socket - Make TPM PCR Policy skipped, unmet condition check ConditionSecurity=measured-uki
+[   13.489633] systemd[1]: Listening on systemd-udevd-control.socket - udev Control Socket.
+[   13.489748] systemd[1]: Listening on systemd-udevd-kernel.socket - udev Kernel Socket.
+[   13.489878] systemd[1]: Listening on systemd-udevd-varlink.socket - udev Varlink Socket.
+[   13.490031] systemd[1]: Listening on systemd-userdbd.socket - User Database Manager Socket.
+[   13.495519] systemd[1]: Mounting dev-hugepages.mount - Huge Pages File System...
+[   13.509071] systemd[1]: Mounting dev-mqueue.mount - POSIX Message Queue File System...
+[   13.512246] systemd[1]: Mounting sys-kernel-debug.mount - Kernel Debug File System...
+[   13.528391] systemd[1]: Mounting sys-kernel-tracing.mount - Kernel Trace File System...
+[   13.528556] systemd[1]: auth-rpcgss-module.service - Kernel Module supporting RPCSEC_GSS skipped, unmet condition check ConditionPathExists=/etc/krb5.keytab
+[   13.541731] systemd[1]: Starting keyboard-setup.service - Set the console keyboard layout...
+[   13.571122] systemd[1]: Starting kmod-static-nodes.service - Create List of Static Device Nodes...
+[   13.584546] systemd[1]: Starting modprobe@configfs.service - Load Kernel Module configfs...
+[   13.584669] systemd[1]: modprobe@drm.service - Load Kernel Module drm skipped, unmet condition check ConditionKernelModuleLoaded=!drm
+[   13.595512] systemd[1]: Starting modprobe@efi_pstore.service - Load Kernel Module efi_pstore...
+[   13.595586] systemd[1]: modprobe@fuse.service - Load Kernel Module fuse skipped, unmet condition check ConditionKernelModuleLoaded=!fuse
+[   13.613478] systemd[1]: Mounting sys-fs-fuse-connections.mount - FUSE Control File System...
+[   13.613706] systemd[1]: systemd-fsck-root.service - File System Check on Root Device skipped, unmet condition check ConditionPathExists=!/run/initramfs/fsck-root
+[   13.613776] systemd[1]: systemd-hibernate-clear.service - Clear Stale Hibernate Storage Info skipped, unmet condition check ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-8cf2644b-4b0b-428f-9387-6d876050dc67
+[   13.675837] systemd[1]: Starting systemd-journald.service - Journal Service...
+[   13.687203] systemd[1]: Starting systemd-modules-load.service - Load Kernel Modules...
+[   13.687247] systemd[1]: systemd-pcrmachine.service - TPM PCR Machine ID Measurement skipped, unmet condition check ConditionSecurity=measured-uki
+[   13.687310] systemd[1]: systemd-pcrproduct.service - TPM NvPCR Product ID Measurement skipped, unmet condition check ConditionSecurity=measured-uki
+[   13.703149] systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems...
+[   13.703245] systemd[1]: systemd-tpm2-setup-early.service - Early TPM SRK Setup skipped, unmet condition check ConditionSecurity=measured-uki
+[   13.735353] systemd[1]: Starting systemd-udev-load-credentials.service - Load udev Rules from Credentials...
+[   13.778815] systemd[1]: Starting systemd-udev-trigger.service - Coldplug All udev Devices...
+[   13.795501] systemd[1]: Mounted dev-hugepages.mount - Huge Pages File System.
+[   13.795975] systemd[1]: Mounted dev-mqueue.mount - POSIX Message Queue File System.
+[   13.796169] systemd[1]: Mounted sys-kernel-debug.mount - Kernel Debug File System.
+[   13.796479] systemd[1]: Mounted sys-kernel-tracing.mount - Kernel Trace File System.
+[   13.798258] systemd[1]: Finished keyboard-setup.service - Set the console keyboard layout.
+[   13.832539] systemd[1]: Finished kmod-static-nodes.service - Create List of Static Device Nodes.
+[   13.832895] systemd[1]: modprobe@configfs.service: Deactivated successfully.
+[   13.833138] systemd[1]: Finished modprobe@configfs.service - Load Kernel Module configfs.
+[   13.833816] systemd[1]: modprobe@efi_pstore.service: Deactivated successfully.
+[   13.838512] systemd[1]: Finished modprobe@efi_pstore.service - Load Kernel Module efi_pstore.
+[   13.838839] systemd[1]: Mounted sys-fs-fuse-connections.mount - FUSE Control File System.
+[   13.839807] systemd[1]: Finished systemd-modules-load.service - Load Kernel Modules.
+[   13.847045] systemd[1]: Mounting sys-kernel-config.mount - Kernel Configuration File System...
+[   13.849835] EXT4-fs (sda1): re-mounted 894e89ec-b178-42b7-a450-6e969a2aa8fe r/w.
+[   13.854758] systemd[1]: Starting systemd-sysctl.service - Apply Kernel Variables...
+[   13.860204] systemd-journald[311]: Collecting audit messages is disabled.
+[   13.863813] systemd[1]: Starting systemd-tmpfiles-setup-dev-early.service - Create Static Device Nodes in /dev gracefully...
+[   13.950280] systemd[1]: Finished systemd-remount-fs.service - Remount Root and Kernel File Systems.
+[   13.971060] systemd[1]: Started systemd-journald.service - Journal Service.
+[   14.115789] Adding 976556k swap on /swap.  Priority:-2 extents:1 across:976556k 
+[   14.168690] systemd-journald[311]: Received client request to flush runtime journal.
+[   18.059555] RPC: Registered named UNIX socket transport module.
+[   18.059566] RPC: Registered udp transport module.
+[   18.059569] RPC: Registered tcp transport module.
+[   18.059572] RPC: Registered tcp-with-tls transport module.
+[   18.059574] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[   18.117127] sr 1:0:0:0: Attached scsi generic sg0 type 5
+[   18.117848] sd 2:0:0:0: Attached scsi generic sg1 type 0
+[   18.367747] vboxguest: host-version: 7.0.6r155176 0x8000000f
+[   18.373507] vbg_heartbeat_init: Setting up heartbeat to trigger every 2000 milliseconds
+[   18.373945] input: VirtualBox mouse integration as /devices/pci0000:00/0000:00:04.0/input/input7
+[   18.892227] 16:14:25.289740 main     VBoxClient 7.0.6 r155176 (verbosity: 0) linux.amd64 (Jan 11 2023 15:34:34) release log
+               16:14:25.289745
+[   18.918082] 16:14:25.318557 main     OS Product: Linux
+[   18.927091] 16:14:25.327120 main     OS Release: 6.18.12+kali-amd64
+[   18.937248] 16:14:25.337498 main     OS Version: #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[   18.960808] 16:14:25.361171 main     Executable: /opt/VBoxGuestAdditions-7.0.6/bin/VBoxClient
+               16:14:25.361178 main     Process ID: 613
+               16:1
+[   18.961824] 16:14:25.362930 main      VBoxClient 7.0.6 r155176 started. Verbose level = 0. Wayland environment detected: no
+[   18.962511] 16:14:25.363965 main      Service: SVGA X11 display
+[   19.032126] 16:14:25.433226 main      Initializing service ...
+[   19.055357] 16:14:25.457033 main      Service is not availabe, skipping
+[   19.128142] 16:14:25.529578 main     VBoxService 7.0.6 r155176 (verbosity: 0) linux.amd64 (Jan 11 2023 15:34:33) release log
+               16:14:25.52958
+[   19.128404] 16:14:25.530289 main     OS Product: Linux
+[   19.128633] 16:14:25.530497 main     OS Release: 6.18.12+kali-amd64
+[   19.128989] 16:14:25.530728 main     OS Version: #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[   19.129432] 16:14:25.531083 main     Executable: /opt/VBoxGuestAdditions-7.0.6/sbin/VBoxService
+               16:14:25.531085 main     Process ID: 622
+               16
+[   19.196293] 16:14:25.597591 main     7.0.6 r155176 started. Verbose level = 0
+[   19.232082] 16:14:25.629802 main     VBoxClient 7.0.6 r155176 (verbosity: 0) linux.amd64 (Jan 11 2023 15:34:39) release log
+               16:14:25.629807
+[   19.235469] 16:14:25.636922 main     OS Product: Linux
+[   19.236210] 16:14:25.637787 main     vbglR3GuestCtrlDetectPeekGetCancelSupport: Supported (#1)
+[   19.237132] 16:14:25.638510 main     OS Release: 6.18.12+kali-amd64
+[   19.238452] 16:14:25.639597 main     OS Version: #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[   19.249056] 16:14:25.650290 main     Executable: /opt/VBoxGuestAdditions-7.0.6/bin/VBoxDRMClient
+               16:14:25.650294 main     Process ID: 628
+               1
+[   19.250018] 16:14:25.651552 main     VBoxDRMClient: found compatible device: /dev/dri/renderD128
+[   19.271923] 16:14:25.673319 main     VBoxDRMClient: IPC server socket access granted to all users
+[   19.282228] 16:14:25.683570 DrmResizeThread VBoxDRMClient: push screen layout data of 1 display(s) to DRM stack, fPartialLayout=false, rc=V
+[   19.833205] ACPI: AC: AC Adapter [AC] (off-line)
+[   20.292311] NET: Registered PF_QIPCRTR protocol family
+[   20.677423] input: PC Speaker as /devices/platform/pcspkr/input/input8
+[   21.124374] e1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[   21.888375] RAPL PMU: API unit is 2^-32 Joules, 0 fixed counters, 10737418240 ms ovfl timer
+[   22.385862] intel_rapl_msr: PL4 support detected.
+[   22.452108] snd_intel8x0 0000:00:05.0: allow list rate for 1028:0177 is 48000
+[   71.769809] 16:15:18.196363 main     VBoxClient 7.0.6 r155176 (verbosity: 0) linux.amd64 (Jan 11 2023 15:34:34) release log
+               16:15:18.196365
+[   71.770431] 16:15:18.198125 main     OS Product: Linux
+[   71.771093] 16:15:18.198603 main     OS Release: 6.18.12+kali-amd64
+[   71.771602] 16:15:18.199263 main     OS Version: #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[   71.771849] 16:15:18.199775 main     Executable: /opt/VBoxGuestAdditions-7.0.6/bin/VBoxClient
+               16:15:18.199776 main     Process ID: 1414
+               16:
+[   71.772060] 16:15:18.200024 main      VBoxClient 7.0.6 r155176 started. Verbose level = 0. Wayland environment detected: no
+[   71.772177] 16:15:18.200232 main      Service: Shared Clipboard
+[   71.775432] 16:15:18.202876 main      Initializing service ...
+[   71.776826] 16:15:18.204205 main      Creating worker thread ...
+[   71.780187] 16:15:18.208057 main     VBoxClient 7.0.6 r155176 (verbosity: 0) linux.amd64 (Jan 11 2023 15:34:34) release log
+               16:15:18.208058
+[   71.780659] 16:15:18.208628 main     OS Product: Linux
+[   71.780981] 16:15:18.208950 main     OS Release: 6.18.12+kali-amd64
+[   71.781380] 16:15:18.209274 main     OS Version: #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[   71.781852] 16:15:18.209676 main     Executable: /opt/VBoxGuestAdditions-7.0.6/bin/VBoxClient
+               16:15:18.209677 main     Process ID: 1419
+               16:
+[   71.782272] 16:15:18.210142 main      VBoxClient 7.0.6 r155176 started. Verbose level = 0. Wayland environment detected: no
+[   71.782622] 16:15:18.210571 main      Service: VirtualBox host version check
+[   71.784555] 16:15:18.212402 main      Creating worker thread ...
+[   71.788139] 16:15:18.216176 main      Service started
+[   71.796253] 16:15:18.222762 main     VBoxClient 7.0.6 r155176 (verbosity: 0) linux.amd64 (Jan 11 2023 15:34:34) release log
+               16:15:18.222766
+[   71.796683] 16:15:18.224461 main     OS Product: Linux
+[   71.797021] 16:15:18.224871 main     OS Release: 6.18.12+kali-amd64
+[   71.797743] 16:15:18.225678 main     OS Version: #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[   71.798044] 16:15:18.226114 main      Service started
+[   71.798300] 16:15:18.226237 main     Executable: /opt/VBoxGuestAdditions-7.0.6/bin/VBoxClient
+               16:15:18.226238 main     Process ID: 1429
+               16:
+[   71.798522] 16:15:18.226488 main      VBoxClient 7.0.6 r155176 started. Verbose level = 0. Wayland environment detected: no
+[   71.798646] 16:15:18.226708 main      Service: Seamless Mode Support
+[   71.800804] 16:15:18.228841 main      Initializing service ...
+[   71.805033] 16:15:18.233013 main      Creating worker thread ...
+[   71.805535] 16:15:18.233602 main      Service started
+[   71.805792] 16:15:18.233739 main     VBoxClient 7.0.6 r155176 (verbosity: 0) linux.amd64 (Jan 11 2023 15:34:34) release log
+               16:15:18.233742
+[   71.805929] 16:15:18.234006 main     OS Product: Linux
+[   71.806060] 16:15:18.234118 main     OS Release: 6.18.12+kali-amd64
+[   71.806250] 16:15:18.234251 main     OS Version: #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[   71.806454] 16:15:18.234438 main     Executable: /opt/VBoxGuestAdditions-7.0.6/bin/VBoxClient
+               16:15:18.234439 main     Process ID: 1434
+               16:
+[   71.806641] 16:15:18.234645 main      VBoxClient 7.0.6 r155176 started. Verbose level = 0. Wayland environment detected: no
+[   71.806739] 16:15:18.234830 main      Service: Drag'n'Drop
+[   71.807927] 16:15:18.235942 main      Initializing service ...
+[   71.815588] 16:15:18.243459 main     VBoxClient 7.0.6 r155176 (verbosity: 0) linux.amd64 (Jan 11 2023 15:34:34) release log
+               16:15:18.243461
+[   71.815854] 16:15:18.243914 main     OS Product: Linux
+[   71.816046] 16:15:18.244050 main     OS Release: 6.18.12+kali-amd64
+[   71.816540] 16:15:18.244392 main     OS Version: #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[   71.817014] 16:15:18.244946 main     Executable: /opt/VBoxGuestAdditions-7.0.6/bin/VBoxClient
+               16:15:18.244947 main     Process ID: 1442
+               16:
+[   71.817261] 16:15:18.245213 main      VBoxClient 7.0.6 r155176 started. Verbose level = 0. Wayland environment detected: no
+[   71.817589] 16:15:18.245600 main      Service: VMSVGA display assistant
+[   71.818375] 16:15:18.246406 main      Creating worker thread ...
+[   71.820309] 16:15:18.248251 main      Initializing service ...
+[   71.821002] 16:15:18.248978 dnd       Proxy window=0xa00001 (debug mode: false), root window=0x304 ...
+[   71.821840] 16:15:18.249890 main      Service started
+[   71.822293] 16:15:18.250281 main     VBoxClient VMSVGA: probing Desktop Environment helper 'GNOME3'
+[   71.822507] 16:15:18.250495 main     VBoxClient VMSVGA: probing Desktop Environment helper 'GENERIC'
+[   71.828458] 16:15:18.256331 main     VBoxClient VMSVGA: attempt to start display change monitor thread, rc=VINF_SUCCESS
+[   71.829210] 16:15:18.257153 main     VBoxClient VMSVGA: using Desktop Environment specific display helper 'GENERIC'
+[   71.829897] 16:15:18.257910 main     VBoxClient VMSVGA: Creating worker thread ...
+[   71.830384] 16:15:18.258416 IpcCLT-1450 VBoxDRMClient: IPC client connection started
+[   71.831228] 16:15:18.259269 main     VBoxClient VMSVGA: Service started
+[   79.008611] 16:15:25.439305 main     VBoxClient 7.0.6 r155176 (verbosity: 0) linux.amd64 (Jan 11 2023 15:34:34) release log
+               16:15:25.439312
+[   79.009169] 16:15:25.440462 main     OS Product: Linux
+[   79.010268] 16:15:25.441573 main     OS Release: 6.18.12+kali-amd64
+[   79.011086] 16:15:25.442075 main     OS Version: #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[   79.013430] 16:15:25.443818 main     Executable: /opt/VBoxGuestAdditions-7.0.6/bin/VBoxClient
+               16:15:25.443821 main     Process ID: 1914
+               16:
+[   79.031747] 16:15:25.462574 main      VBoxClient 7.0.6 r155176 started. Verbose level = 0. Wayland environment detected: no
+[   79.032304] 16:15:25.463574 main      Service: Shared Clipboard
+[   79.520223] 16:15:25.947253 main     VBoxClient 7.0.6 r155176 (verbosity: 0) linux.amd64 (Jan 11 2023 15:34:34) release log
+               16:15:25.947303
+[   79.579351] 16:15:26.009626 main     OS Product: Linux
+[   79.581661] 16:15:26.011461 main     OS Release: 6.18.12+kali-amd64
+[   79.583611] 16:15:26.013790 main     OS Version: #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[   79.584593] 16:15:26.015712 main     Executable: /opt/VBoxGuestAdditions-7.0.6/bin/VBoxClient
+               16:15:26.015716 main     Process ID: 1947
+               16:
+[   79.585446] 16:15:26.016695 main      VBoxClient 7.0.6 r155176 started. Verbose level = 0. Wayland environment detected: no
+[   79.586026] 16:15:26.017569 main      Service: VirtualBox host version check
+[   79.636142] 16:15:26.067252 main     VBoxClient 7.0.6 r155176 (verbosity: 0) linux.amd64 (Jan 11 2023 15:34:34) release log
+               16:15:26.067258
+[   79.636704] 16:15:26.068358 main     OS Product: Linux
+[   79.637365] 16:15:26.068831 main     OS Release: 6.18.12+kali-amd64
+[   79.653204] 16:15:26.084388 main     OS Version: #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[   79.655366] 16:15:26.086371 main     Executable: /opt/VBoxGuestAdditions-7.0.6/bin/VBoxClient
+               16:15:26.086374 main     Process ID: 1953
+               16:
+[   79.658005] 16:15:26.089197 main      VBoxClient 7.0.6 r155176 started. Verbose level = 0. Wayland environment detected: no
+[   79.663981] 16:15:26.095522 main      Service: Seamless Mode Support
+[   79.740833] 16:15:26.171602 main      Creating worker thread ...
+[   79.750519] 16:15:26.182075 main      Service started
+[   80.074937] 16:15:26.502806 main     VBoxClient 7.0.6 r155176 (verbosity: 0) linux.amd64 (Jan 11 2023 15:34:34) release log
+               16:15:26.502810
+[   80.145689] 16:15:26.577465 main     OS Product: Linux
+[   80.168460] 16:15:26.600174 main     OS Release: 6.18.12+kali-amd64
+[   80.191822] 16:15:26.621747 main     OS Version: #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[   80.231294] 16:15:26.662450 main     Executable: /opt/VBoxGuestAdditions-7.0.6/bin/VBoxClient
+               16:15:26.662456 main     Process ID: 1963
+               16:
+[   80.296677] 16:15:26.728136 main      VBoxClient 7.0.6 r155176 started. Verbose level = 0. Wayland environment detected: no
+[   80.340910] 16:15:26.772730 main      Service: Drag'n'Drop
+[   81.108206] 16:15:27.539808 main     VBoxClient 7.0.6 r155176 (verbosity: 0) linux.amd64 (Jan 11 2023 15:34:34) release log
+               16:15:27.539817
+[   81.194378] 16:15:27.626770 main     OS Product: Linux
+[   81.194904] 16:15:27.627282 main     OS Release: 6.18.12+kali-amd64
+[   81.195645] 16:15:27.627797 main     OS Version: #1 SMP PREEMPT_DYNAMIC Kali 6.18.12-1kali1 (2026-02-25)
+[   81.196622] 16:15:27.628538 main     Executable: /opt/VBoxGuestAdditions-7.0.6/bin/VBoxClient
+               16:15:27.628540 main     Process ID: 2013
+               16:
+[   81.197490] 16:15:27.629525 main      VBoxClient 7.0.6 r155176 started. Verbose level = 0. Wayland environment detected: no
+[   81.198013] 16:15:27.630388 main      Service: VMSVGA display assistant
+[   81.308800] 16:15:27.741303 main      Initializing service ...
+[   81.320646] 16:15:27.751635 main     VBoxClient VMSVGA: Error: Service ended with error VERR_FILE_LOCK_VIOLATION
+[ 1057.201919] 16:31:43.563952 SHCLX11   Shared Clipboard: Converting X11 format 'UTF8_STRING' (idxFmtX11=1) to VBox format 0x1 failed, rc=VER
+[ 1061.368965] 16:31:47.731470 SHCLX11   Shared Clipboard: Converting X11 format 'text/plain;charset=utf-8' (idxFmtX11=3) to VBox format 0x1 f
+[ 1747.040815] 16:43:13.058800 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.045334] 16:43:13.065729 dnd       No guest source window
+[ 1747.054945] 16:43:13.073908 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.056796] 16:43:13.077051 dnd       No guest source window
+[ 1747.061932] 16:43:13.082021 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.063172] 16:43:13.083749 dnd       No guest source window
+[ 1747.083221] 16:43:13.104058 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.085207] 16:43:13.105578 dnd       No guest source window
+[ 1747.105506] 16:43:13.126150 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.107382] 16:43:13.127346 dnd       No guest source window
+[ 1747.128038] 16:43:13.148852 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.129568] 16:43:13.150277 dnd       No guest source window
+[ 1747.134743] 16:43:13.155442 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.135697] 16:43:13.156570 dnd       No guest source window
+[ 1747.143245] 16:43:13.164043 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.144115] 16:43:13.165073 dnd       No guest source window
+[ 1747.158150] 16:43:13.178799 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.159128] 16:43:13.180060 dnd       No guest source window
+[ 1747.165314] 16:43:13.186095 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.166576] 16:43:13.187496 dnd       No guest source window
+[ 1747.173236] 16:43:13.193950 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.174433] 16:43:13.195308 dnd       No guest source window
+[ 1747.180571] 16:43:13.201339 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.181402] 16:43:13.202316 dnd       No guest source window
+[ 1747.188950] 16:43:13.209613 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.190124] 16:43:13.210946 dnd       No guest source window
+[ 1747.196240] 16:43:13.217021 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.197033] 16:43:13.217943 dnd       No guest source window
+[ 1747.203553] 16:43:13.224241 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.205165] 16:43:13.225893 dnd       No guest source window
+[ 1747.211018] 16:43:13.231803 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.211938] 16:43:13.232777 dnd       No guest source window
+[ 1747.218084] 16:43:13.238842 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.218911] 16:43:13.239798 dnd       No guest source window
+[ 1747.248490] 16:43:13.269091 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.249339] 16:43:13.270180 dnd       No guest source window
+[ 1747.272016] 16:43:13.292491 dndHGCM   DnD: Received message HOST_DND_FN_GH_REQ_PENDING (0x258) from host
+[ 1747.273939] 16:43:13.294489 dnd       No guest source window
+[ 2324.494170] my_usb_driver: loading out-of-tree module taints kernel.
+[ 2324.495151] my_usb_driver: module verification failed: signature and/or required key missing - tainting kernel
+[ 2324.605382] USB: Major:243 Minor: 0
+[ 2324.615635] thread created successfuly
+[ 2324.615694] USB: Kernel module inserted........
+[ 2324.616649] waiting for event
+[ 2361.423785] USB: Driver open called....
+[ 2361.423883] USB: data read done......
+[ 2361.446604] USB: data read done......
+[ 2361.451255] USB: data read done......
+[ 2361.457847] USB: data read done......
+[ 2361.467665] USB: data read done......
+[ 2361.709054] USB: data read done......
+[ 2361.727064] USB: data read done......
+[ 2361.741850] USB: data read done......
+[ 2361.756828] USB: data read done......
+[ 2361.761944] USB: data read done......
+[ 2361.766934] USB: data read done......
+[ 2361.773410] USB: data read done......
+[ 2361.777522] USB: data read done......
+[ 2361.781961] USB: data read done......
+[ 2361.789393] USB: data read done......
+[ 2361.803369] USB: data read done......
+[ 2361.812170] USB: data read done......
+[ 2361.819831] USB: data read done......
+[ 2361.827072] USB: data read done......
+[ 2361.834198] USB: data read done......
+[ 2361.846387] USB: data read done......
+[ 2361.851172] USB: data read done......
+[ 2361.855594] USB: data read done......
+[ 2361.859776] USB: data read done......
+[ 2361.863912] USB: data read done......
+[ 2361.868630] USB: data read done......
+[ 2361.873732] USB: data read done......
+[ 2361.880389] USB: data read done......
+[ 2361.894235] USB: data read done......
+[ 2361.899891] USB: data read done......
+[ 2361.904210] USB: data read done......
+[ 2361.908646] USB: data read done......
+[ 2361.913417] USB: data read done......
+[ 2361.917593] USB: data read done......
+[ 2361.923576] USB: data read done......
+[ 2361.929728] USB: data read done......
+[ 2361.943034] USB: data read done......
+[ 2361.950894] USB: data read done......
+[ 2361.958534] USB: data read done......
+[ 2361.962815] USB: data read done......
+[ 2361.968905] USB: data read done......
+[ 2361.982400] USB: data read done......
+[ 2361.987513] USB: data read done......
+[ 2361.991792] USB: data read done......
+[ 2361.995946] USB: data read done......
+[ 2362.000214] USB: data read done......
+[ 2362.004397] USB: data read done......
+[ 2362.009110] USB: data read done......
+[ 2362.014163] USB: data read done......
+[ 2362.019215] USB: data read done......
+[ 2362.048282] USB: data read done......
+[ 2362.052353] USB: data read done......
+[ 2362.057107] USB: data read done......
+[ 2362.062666] USB: data read done......
+[ 2362.066810] USB: data read done......
+[ 2362.072173] USB: data read done......
+[ 2362.080598] USB: data read done......
+[ 2362.094839] USB: data read done......
+[ 2362.099326] USB: data read done......
+[ 2362.103732] USB: data read done......
+[ 2362.108147] USB: data read done......
+[ 2362.112661] USB: data read done......
+[ 2362.116701] USB: data read done......
+[ 2362.122381] USB: data read done......
+[ 2362.128013] USB: data read done......
+[ 2362.137995] USB: data read done......
+[ 2362.143622] USB: data read done......
+[ 2362.147827] USB: data read done......
+[ 2362.151846] USB: data read done......
+[ 2362.156371] USB: data read done......
+[ 2362.160432] USB: data read done......
+[ 2362.165362] USB: data read done......
+[ 2362.169670] USB: data read done......
+[ 2362.181573] USB: data read done......
+[ 2362.186122] USB: data read done......
+[ 2362.190271] USB: data read done......
+[ 2362.194788] USB: data read done......
+[ 2362.198890] USB: data read done......
+[ 2362.203189] USB: data read done......
+[ 2362.208014] USB: data read done......
+[ 2362.213761] USB: data read done......
+[ 2362.226550] USB: data read done......
+[ 2362.232804] USB: data read done......
+[ 2362.239936] USB: data read done......
+[ 2362.243472] USB: data read done......
+[ 2362.247998] USB: data read done......
+[ 2362.252301] USB: data read done......
+[ 2362.260120] USB: data read done......
+[ 2362.296352] USB: data read done......
+[ 2362.308197] USB: data read done......
+[ 2362.319309] USB: data read done......
+[ 2362.328407] USB: data read done......
+[ 2362.342108] USB: data read done......
+[ 2362.351803] USB: data read done......
+[ 2362.365848] USB: data read done......
+[ 2362.391437] USB: data read done......
+[ 2362.405145] USB: data read done......
+[ 2362.417469] USB: data read done......
+[ 2362.429718] USB: data read done......
+[ 2362.445339] USB: data read done......
+[ 2362.452711] USB: data read done......
+[ 2362.460086] USB: data read done......
+[ 2362.464509] USB: data read done......
+[ 2362.469988] USB: data read done......
+[ 2362.480517] USB: data read done......
+[ 2362.485359] USB: data read done......
+[ 2362.489415] USB: data read done......
+[ 2362.493604] USB: data read done......
+[ 2362.498282] USB: data read done......
+[ 2362.502753] USB: data read done......
+[ 2362.508698] USB: data read done......
+[ 2362.513730] USB: data read done......
+[ 2362.542924] USB: data read done......
+[ 2362.548123] USB: data read done......
+[ 2362.552236] USB: data read done......
+[ 2362.557713] USB: data read done......
+[ 2362.562090] USB: data read done......
+[ 2362.566702] USB: data read done......
+[ 2362.571651] USB: data read done......
+[ 2362.577254] USB: data read done......
+[ 2362.587637] USB: data read done......
+[ 2362.592684] USB: data read done......
+[ 2362.597122] USB: data read done......
+[ 2362.602698] USB: data read done......
+[ 2362.607060] USB: data read done......
+[ 2362.611372] USB: data read done......
+[ 2362.617269] USB: data read done......
+[ 2362.624065] USB: data read done......
+[ 2362.637782] USB: data read done......
+[ 2362.642301] USB: data read done......
+[ 2362.646652] USB: data read done......
+[ 2362.650943] USB: data read done......
+[ 2362.655053] USB: data read done......
+[ 2362.659742] USB: data read done......
+[ 2362.666153] USB: data read done......
+[ 2362.678407] USB: data read done......
+[ 2362.683169] USB: data read done......
+[ 2362.687508] USB: data read done......
+[ 2362.692289] USB: data read done......
+[ 2362.696558] USB: data read done......
+[ 2362.714993] USB: data read done......
+[ 2362.732969] USB: data read done......
+[ 2362.737107] USB: data read done......
+[ 2362.742159] USB: data read done......
+[ 2362.746249] USB: data read done......
+[ 2362.750278] USB: data read done......
+[ 2362.756500] USB: data read done......
+[ 2362.760742] USB: data read done......
+[ 2362.767827] USB: data read done......
+[ 2362.832744] USB: data read done......
+[ 2362.842493] USB: data read done......
+[ 2362.849850] USB: data read done......
+[ 2362.858687] USB: data read done......
+[ 2362.863114] USB: data read done......
+[ 2362.876766] USB: data read done......
+[ 2362.886610] USB: data read done......
+[ 2362.895371] USB: data read done......
+[ 2362.903716] USB: data read done......
+[ 2362.909105] USB: data read done......
+[ 2362.922344] USB: data read done......
+[ 2362.929061] USB: data read done......
+[ 2362.933833] USB: data read done......
+[ 2362.938603] USB: data read done......
+[ 2362.945260] USB: data read done......
+[ 2362.949833] USB: data read done......
+[ 2362.961377] USB: data read done......
+[ 2362.966448] USB: data read done......
+[ 2362.973034] USB: data read done......
+[ 2362.979343] USB: data read done......
+[ 2362.987485] USB: data read done......
+[ 2362.994238] USB: data read done......
+[ 2362.999745] USB: data read done......
+[ 2363.012572] USB: data read done......
+[ 2363.020826] USB: data read done......
+[ 2363.028809] USB: data read done......
+[ 2363.037574] USB: data read done......
+[ 2363.046549] USB: data read done......
+[ 2363.073478] USB: data read done......
+[ 2363.081692] USB: data read done......
+[ 2363.088415] USB: data read done......
+[ 2363.093189] USB: data read done......
+[ 2363.097397] USB: data read done......
+[ 2363.103957] USB: data read done......
+[ 2363.115402] USB: data read done......
+[ 2363.119834] USB: data read done......
+[ 2363.124130] USB: data read done......
+[ 2363.128262] USB: data read done......
+[ 2363.132158] USB: data read done......
+[ 2363.136556] USB: data read done......
+[ 2363.141726] USB: data read done......
+[ 2363.147416] USB: data read done......
+[ 2363.152466] USB: data read done......
+[ 2363.165213] USB: data read done......
+[ 2363.172369] USB: data read done......
+[ 2363.179848] USB: data read done......
+[ 2363.184234] USB: data read done......
+[ 2363.188877] USB: data read done......
+[ 2363.194590] USB: data read done......
+[ 2363.199796] USB: data read done......
+[ 2363.212078] USB: data read done......
+[ 2363.216507] USB: data read done......
+[ 2363.225067] USB: data read done......
+[ 2363.230220] USB: data read done......
+[ 2363.235837] USB: data read done......
+[ 2363.242254] USB: data read done......
+[ 2363.249071] USB: data read done......
+[ 2363.258415] USB: data read done......
+[ 2363.262765] USB: data read done......
+[ 2363.266874] USB: data read done......
+[ 2363.271676] USB: data read done......
+[ 2363.275695] USB: data read done......
+[ 2363.281426] USB: data read done......
+[ 2363.286254] USB: data read done......
+[ 2363.291434] USB: data read done......
+[ 2363.318719] USB: data read done......
+[ 2363.327230] USB: data read done......
+[ 2363.334284] USB: data read done......
+[ 2363.344210] USB: data read done......
+[ 2363.348939] USB: data read done......
+[ 2363.355440] USB: data read done......
+[ 2363.370592] USB: data read done......
+[ 2363.379018] USB: data read done......
+[ 2363.389566] USB: data read done......
+[ 2363.420462] USB: data read done......
+[ 2363.445452] USB: data read done......
+[ 2363.453142] USB: data read done......
+[ 2363.462185] USB: data read done......
+[ 2363.466372] USB: data read done......
+[ 2363.471286] USB: data read done......
+[ 2363.477755] USB: data read done......
+[ 2363.486054] USB: data read done......
+[ 2363.493168] USB: data read done......
+[ 2363.501143] USB: data read done......
+[ 2363.512645] USB: data read done......
+[ 2363.517625] USB: data read done......
+[ 2363.521662] USB: data read done......
+[ 2363.526336] USB: data read done......
+[ 2363.530504] USB: data read done......
+[ 2363.534581] USB: data read done......
+[ 2363.540822] USB: data read done......
+[ 2363.547210] USB: data read done......
+[ 2363.573290] USB: data read done......
+[ 2363.580018] USB: data read done......
+[ 2363.588175] USB: data read done......
+[ 2363.592634] USB: data read done......
+[ 2363.598857] USB: data read done......
+[ 2363.603384] USB: data read done......
+[ 2363.617662] USB: data read done......
+[ 2363.625447] USB: data read done......
+[ 2363.631224] USB: data read done......
+[ 2363.635335] USB: data read done......
+[ 2363.639483] USB: data read done......
+[ 2363.644732] USB: data read done......
+[ 2363.651143] USB: data read done......
+[ 2363.657388] USB: data read done......
+[ 2363.668127] USB: data read done......
+[ 2363.672756] USB: data read done......
+[ 2363.676711] USB: data read done......
+[ 2363.681365] USB: data read done......
+[ 2363.685452] USB: data read done......
+[ 2363.690286] USB: data read done......
+[ 2363.698598] USB: data read done......
+[ 2363.714999] USB: data read done......
+[ 2363.721550] USB: data read done......
+[ 2363.728969] USB: data read done......
+[ 2363.737892] USB: data read done......
+[ 2363.744177] USB: data read done......
+[ 2363.746535] USB: driver release called.....
+[ 2878.526316] event came from exit func
+[ 2878.526804] USB: kernel module exited
+[ 2883.446304] USB: Major:243 Minor: 0
+[ 2883.453505] thread created successfuly
+[ 2883.453510] USB: Kernel module inserted........
+[ 2883.453852] waiting for event
+[ 3329.981385] event came from exit func
+[ 3329.981764] USB: kernel module exited
+[ 3336.224158] USB: Major:243 Minor: 0
+[ 3336.235962] thread created successfuly
+[ 3336.236293] USB: Kernel module inserted........
+[ 3336.238969] waiting for event
+[ 3536.324195] event came from exit func
+[ 3536.324324] USB: kernel module exited
+[ 3551.899000] USB: Major:243 Minor: 0
+[ 3551.900298] thread created successfuly
+[ 3551.900301] USB: Kernel module inserted........
+[ 3551.901794] waiting for event

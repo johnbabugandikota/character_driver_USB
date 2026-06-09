@@ -18,45 +18,6 @@
 #include<linux/interrupt.h>
 #include<linux/sysfs.h>
 
-#define IRQ_NO 11 
-
-#define mem_size 1024 // memory size
-#define WR_VALUE _IOW('a','a',int32_t*)
-#define RD_VALUE _IOR('a','b',int32_t*)
-
-//work structrure
-static struct work_struct workqueue;
-void workqueue_fn(struct work_struct *work);
-
-void workqueue_fn(struct work_struct *work){
-	pr_info("Executing workqueue impl\n");
-}
-
-//interrupt handler for IRQ 11
-static irqreturn_t irq_handler(int irq,void *dev_id){
-	pr_info("shared IRQ: interrupt occured\n");
-	schedule_work(&workqueue);//allocating work to queue
-	return IRQ_HANDLED;
-}
-
-/*************** Sysfs Fuctions **********************/
-/*static ssize_t sysfs_show(struct kobject *kobj, 
-                struct kobj_attribute *attr, char *buf);
-static ssize_t sysfs_store(struct kobject *kobj, 
-                struct kobj_attribute *attr,const char *buf, size_t count);
- 
-struct kobj_attribute etx_attr = __ATTR(etx_value, 0660, sysfs_show, sysfs_store); */
- 
-
-
-//wait var
-uint32_t read_count;
-static struct task_struct *wait_thread;
-wait_queue_head_t wait_queue_usb;
-int wait_queue_flag=0;
-
-
-
 static int32_t value=0;
 static char proc_array[20]="trying proc fs";
 static int len = 1;  //length for proc
@@ -67,7 +28,7 @@ static struct proc_dir_entry *parent;
 dev_t dev=0;
 static struct class *dev_class;
 static struct cdev usb_cdev;
-uint8_t *kernel_buffer;
+
 
 static int __init my_module_init(void);
 static void  __exit my_module_exit(void);
@@ -75,24 +36,7 @@ static int usb_open(struct inode *inode,struct file *file);
 static int usb_release(struct inode *inode, struct file *file);
 static ssize_t usb_read(struct file *filp,char __user *buf,size_t len,loff_t* off);
 static ssize_t usb_write(struct file *filp, const char *buf,size_t len,loff_t* off);
-static long int usb_ioctl(struct file *file,unsigned int cmd,unsigned long arg);
-
-
-//thread func
-/*
-static int wait_func(void* unused){
-	while(1){
-		pr_info("waiting for event\n");
-		wait_event_interruptible(wait_queue_usb,wait_queue_flag!=0);
-		if(wait_queue_flag==2){
-			pr_info("event came from exit func\n");
-			return 0;
-		}
-		pr_info("event came from read func-- %d\n",++read_count);
-		wait_queue_flag=0;
-	}
-	return 0;
-}*/
+static long  int usb_ioctl(struct file *file,unsigned int cmd,unsigned long arg);
 
 // fops related structure 
 static struct file_operations fops=
@@ -133,20 +77,13 @@ static int usb_release(struct inode *inode,struct file *file){
 }
 
 static ssize_t usb_read(struct file *filp,char __user *buf,size_t len,loff_t *off ){
-	if(copy_to_user(buf,kernel_buffer,mem_size)){
-		pr_err("USB: data read :ERR\n");
-	}
 	pr_info("USB: data read done......\n");
-	return len;
+	return 0;
 }
 
-static ssize_t usb_write(struct file *filp,const char __user *buf,size_t len,loff_t *off){
-	if(copy_from_user(kernel_buffer,buf,mem_size)){
-		pr_err("USB: Data write : ERR\n");
-	 }	 
+static ssize_t usb_write(struct file *filp,const char __user *buf,size_t len,loff_t *off){	 
 	pr_info("USB: data write done!!!!....\n");
-	pr_info("USB: data from user is: %s\n",kernel_buffer);
-	return len;
+	return 0;
 }
 
 /*
@@ -191,28 +128,6 @@ static ssize_t read_proc(struct file *filp, char __user *buffer, size_t length,l
     return length;;
 }
 
-static long  int usb_ioctl(struct file *file,unsigned int cmd,unsigned long arg){
-//	pr_info("USB: arg address received : %lx",arg);
-
-
-	switch(cmd){
-		case WR_VALUE: if(copy_from_user(&value,(int32_t __user * )arg,sizeof(value))){
-					pr_err("USB: Data wrtte : ERR\n");
-					return -EFAULT;
-			       }
-			       pr_info("USB: value got from user to write :%d\n",value);
-			       break;
-		case RD_VALUE: if(copy_to_user((int32_t __user *)arg,&value,sizeof(value))){
-					pr_err("USB: data read: ERR\n");
-					return -EFAULT;
-			       }
-			       //pr_info("USB: data sendng to user: %d\n",value);
-			       break;
-		default: pr_info("USB: default cmd\n");
-			      break;
-	}
-	return 0;
-}
 
 /*
 ** This function will be called when we write the procfs file
@@ -229,6 +144,13 @@ static ssize_t write_proc(struct file *filp, const char *buff, size_t len, loff_
     return len;
 }
 
+
+static long  int usb_ioctl(struct file *file,unsigned int cmd,unsigned long arg)
+{
+	pr_info("in ioctl func\n");
+	return 0;
+	
+}
 static int __init my_module_init(void){
 	//alloc major and minor num at run time
 	if((alloc_chrdev_region(&dev, 0,1,"john_usb_driver"))<0){
@@ -260,8 +182,8 @@ static int __init my_module_init(void){
 	}
 
 	
- /*Create proc directory. It will create a directory under "/proc" */
-      /*  parent = proc_mkdir("john_usb",NULL);
+ //Create proc directory. It will create a directory under "/proc"
+       parent = proc_mkdir("john_usb",NULL);
         if( parent == NULL )
         {
             pr_info("Error creating proc entry");
@@ -271,36 +193,11 @@ static int __init my_module_init(void){
         //Creating Proc entry under "/proc/etx/" 
         proc_create("john_proc", 0666, parent, &proc_fops);
  
-	//creating kernel memory at init
-	if((kernel_buffer=kmalloc(mem_size,GFP_KERNEL))==0){
-		pr_err("USB: cannot allocate memory....\n");
-		goto r_device;
-	}
-	strcpy(kernel_buffer,"Hello World\n");*/ // commenting due to this version only for testing dyn work and wq
-
-	
- if (request_irq(IRQ_NO, irq_handler, IRQF_SHARED, "etx_device", (void *)(irq_handler))) {
-            printk(KERN_INFO "my_device: cannot register IRQ ");
-                    goto irq;
-        }
- /*Creating work by Dynamic Method */
-        INIT_WORK(&workqueue,workqueue_fn);
-/*	init_waitqueue_head(&wait_queue_usb);// dymanically init waitqueue
-	wait_thread=kthread_create(wait_func,NULL,"wait_thead");
-	if(wait_thread){
-		pr_info("thread created successfuly\n");
-		wake_up_process(wait_thread);
-	}
-	else{
-		pr_info("thread creation failed\n");
-	} */ //commenting since thisis a static way of workqueue available in previous version 
-
 	pr_info("USB: Kernel module inserted........\n");
 	
 	return 0;
 
-irq:
-        free_irq(IRQ_NO,(void *)(irq_handler));
+
 r_device:
 	class_destroy(dev_class);
 r_class:
@@ -313,14 +210,9 @@ r_class:
 
 static void  __exit my_module_exit(void){
 
-	 free_irq(IRQ_NO,(void *)(irq_handler));	
 	/* remove complete /proc/etx */
         proc_remove(parent);
 
-	wait_queue_flag=2;
-	wake_up_interruptible(&wait_queue_usb);
-
-	kfree(kernel_buffer);
 	device_destroy(dev_class,dev);
 	class_destroy(dev_class);
 	cdev_del(&usb_cdev);
@@ -334,5 +226,4 @@ module_exit(my_module_exit);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("JOHN");
-MODULE_VERSION("1.8");
-MODULE_DESCRIPTION("Simple Linux device driver (Global Workqueue - Dynamic method");
+MODULE_DESCRIPTION("Proc fs code");
